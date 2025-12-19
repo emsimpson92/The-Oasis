@@ -53,6 +53,9 @@ function ContactPage() {
 
     const handleSubmit = () => { 
         if(message.content.trim().length > 0) {
+            message.content = `<@&1451315849419030643> ${message.content}`;
+            message.username ||= 'Anonymous';
+
             const method = {
                 method: 'POST',
                 mode: 'cors',
@@ -101,7 +104,7 @@ function ContactPage() {
                         margin="normal" 
                         placeholder='Leave blank if you wish to remain anonymous' />
                     <TextField sx={styles.input} 
-                        slotProps={{ htmlInput: { maxLength: 2000 } }} 
+                        slotProps={{ htmlInput: { maxLength: 1950 } }} 
                         value={message.content} 
                         onChange={(event) => setMessage({...message, content: event.target.value})} 
                         label="Message" 

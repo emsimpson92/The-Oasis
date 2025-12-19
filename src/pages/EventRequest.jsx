@@ -62,7 +62,7 @@ function EventRequest() {
                 },
                 body: JSON.stringify({
                     username: eventRequest.username,
-                    content: `Event Request: ${eventRequest.eventName}\n${eventRequest.description}`,
+                    content: `<@&1451315110856495225> Event Request: ${eventRequest.eventName}\n${eventRequest.description}`,
                 }),
             };
 
