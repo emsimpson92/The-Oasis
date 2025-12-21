@@ -220,7 +220,7 @@ export const Plots = [
         },
         {
             id: 52,
-            description: 'Community Lodge'
+            description: 'Cliffside Pines Lodge'
         },
         {
             id: 53,

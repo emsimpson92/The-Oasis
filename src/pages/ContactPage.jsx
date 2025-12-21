@@ -19,6 +19,15 @@ const Styles = (theme, formIsValid) => {
             fontFamily: 'Arsenica Trial Regular, serif',
             textAlign: 'center',
         },
+        text: {
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            paddingTop: theme.spacing.lg,
+            userSelect: 'none',
+            opacity: '0.7',
+            fontFamily: 'serif',
+            textAlign: 'center',
+        },
         input: {
             backgroundColor: theme.colors.header,
             margin: '6px 0px'
@@ -26,7 +35,7 @@ const Styles = (theme, formIsValid) => {
         form: {
             margin: 'auto',
             maxWidth: '50rem',
-            padding: theme.spacing.lg,
+            paddingTop: '0px'
         },
         button: {
             marginTop: '6px',
@@ -94,6 +103,9 @@ function ContactPage() {
                 <Typography variant="h1" style={styles.pageTitle}>
                     {'Oasis Contact Form'}
                 </Typography>
+                <Typography variant="h6" style={styles.text}>
+                    {'Send us a message and one of our staff members will reach out to you on discord.'}
+                </Typography>
                 <form style={styles.form} onSubmit={handleSubmit}>
                     <TextField sx={styles.input} 
                         value={message.username} 
@@ -101,8 +113,7 @@ function ContactPage() {
                         label="Character Name" 
                         variant="outlined" 
                         fullWidth 
-                        margin="normal" 
-                        placeholder='Leave blank if you wish to remain anonymous' />
+                        margin="normal" />
                     <TextField sx={styles.input} 
                         slotProps={{ htmlInput: { maxLength: 1950 } }} 
                         value={message.content} 
