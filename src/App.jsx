@@ -12,7 +12,7 @@ const NightlifePage = lazy(() => import('./pages/NightlifePage'));
 const EventsPage = lazy(() => import('./pages/EventsPage'));
 const RecreationPage = lazy(() => import('./pages/RecreationPage'));
 const MapPage = lazy(() => import('./pages/MapPage'));
-const ComingSoon = lazy(() => import('./pages/ComingSoon'));
+const UpcomingEvents = lazy(() => import('./pages/UpcomingEvents'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -41,7 +41,7 @@ function App() {
             <Route path="/recreation" element={<Suspense fallback={background}><RecreationPage /></Suspense>} />
             <Route path="/map" element={<Suspense fallback={background}><MapPage /></Suspense>} />
             <Route path="/about" element={<Suspense fallback={background}><AboutPage /></Suspense>} />
-            <Route path="/events/upcoming" element={<Suspense fallback={background}><ComingSoon /></Suspense>} />
+            <Route path="/events/upcoming" element={<Suspense fallback={background}><UpcomingEvents /></Suspense>} />
             <Route path="/events/request" element={<Suspense fallback={background}><EventRequest /></Suspense>} />
             <Route path="/contact" element={<Suspense fallback={background}><ContactPage /></Suspense>} />
             <Route path="*" element={<Suspense fallback={background}><NotFound /></Suspense>} />

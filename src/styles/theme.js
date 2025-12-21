@@ -9,6 +9,7 @@ export const oasisTheme = {
   typography: {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     fontSize: {
+      xs: '0.75rem',
       small: '0.875rem',
       base: '1rem',
       large: '1.25rem',

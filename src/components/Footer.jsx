@@ -49,10 +49,7 @@ const Styles = (theme) => {
             textAlign: 'left',
             display: 'block',
             fontSize: '0.875rem',
-            margin: `${theme.spacing.xs} 0`,
-            '&:hover': {
-                opacity: 0.7,
-            },
+            margin: `${theme.spacing.xs} 0`
         },
         oasisLogo: {
             width: '60px', 
