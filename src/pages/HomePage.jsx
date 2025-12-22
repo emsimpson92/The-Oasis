@@ -81,7 +81,7 @@ const Styles = (theme) => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            background: `url(${OasisHomeImg})`,
+            background: OasisHomeImg,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
@@ -187,32 +187,32 @@ function HomePage() {
                     <Grid container spacing={3} style={{display: 'flex', justifyContent: 'center'}}>
                         <Grid item xs={12} sm={6} md={4} key={1}>
                             <ActivityCard title={'Spa & Wellness'} description={'Relax and rejuvenate at our hot springs resort'} link={'/wellness'}>
-                                <img src={SpringsImg} alt={'Wellness'} style={styles.activityImage} />
+                                <img src={SpringsImg} alt={'Wellness'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={2}>
                             <ActivityCard title={'Dining'} description={'Exquisite culinary experiences crafted by renowned chefs'} link={'/dining'}>
-                                <img src={DiningImg} alt={'Dining'} style={styles.activityImage} />
+                                <img src={DiningImg} alt={'Dining'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={3}>
                             <ActivityCard title={'Nightlife'} description={'Experience vibrant nightlife and entertainment'} link={'/nightlife'}>
-                                <img src={NightlifeImg} alt={'Nightlife'} style={styles.activityImage} />
+                                <img src={NightlifeImg} alt={'Nightlife'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={4}>
                             <ActivityCard title={'Events'} description={'Host your special occasions in our stunning venues'} link={'/events'}>
-                                <img src={EventsImg} alt={'Events'} style={styles.activityImage} />
+                                <img src={EventsImg} alt={'Events'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={5}>
                             <ActivityCard title={'Recreation'} description={'Enjoy waterfalls, beaches, and outdoor adventures'} link={'/recreation'}>
-                                <img src={RecreationImg} alt={'Recreation'} style={styles.activityImage} />
+                                <img src={RecreationImg} alt={'Recreation'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={6}>
                             <ActivityCard title={'Accommodations'} description={'Luxurious rooms with breathtaking views'} link={'/accommodations'}>
-                                <img src={AccommodationsImg} alt={'Accommodations'} style={styles.activityImage} />
+                                <img src={AccommodationsImg} alt={'Accommodations'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                     </Grid>

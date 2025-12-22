@@ -93,7 +93,7 @@ function Page(props) {
                     props.items.map((item) => (
                         <Grid item xs={12} sm={6} md={4} key={item.id}>
                             <ActivityCard title={item.name} description={item.description}>
-                                <img src={item.image} alt={item.name} style={styles.cardImage} />
+                                <img src={item.image} alt={item.name} style={styles.cardImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                     ))

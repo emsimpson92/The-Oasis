@@ -7,7 +7,7 @@ function RecreationPage() {
     return (
         <Page pageTitle={'Recreation'} 
             subtitle={'Outdoor Adventures Await'}
-            heroImage={<img src={RecreationImg} alt="Recreation Experience" />}
+            heroImage={<img src={RecreationImg} alt="Recreation Experience" loading='lazy' />}
             description={'Discover the natural beauty and thrilling activities our paradise has to offer. From serene hikes to adrenaline-pumping sports, there\'s something for everyone.'}
             cardSectionTitle={'Our Activities'}
             items={Recreation} />

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import {  useEffect } from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
@@ -82,7 +82,7 @@ function AboutPage() {
                             {'There is something for everyone at The Oasis.'}
                         </Typography>
                         <figure style={{margin: '0px'}}>
-                            <img src={Oasis} alt="Oasis" style={styles.image} />
+                            <img src={Oasis} alt="Oasis" style={styles.image} loading='lazy' />
                             <figcaption style={styles.caption}>{'One of our many stunning views!'}</figcaption>
                         </figure>
                     </div>
@@ -92,7 +92,7 @@ function AboutPage() {
                     <hr style={styles.divider} />
                     <div style={{...styles.body, justifyContent: 'flex-start'}}>
                         <figure style={{margin: '0px'}}>
-                            <img src={Zadwick} alt="Zadwick" style={styles.portrait} />
+                            <img src={Zadwick} alt="Zadwick" style={styles.portrait} loading='lazy' />
                             <figcaption style={styles.caption}>{'Zadwick - Oasis Community Manager'}</figcaption>
                         </figure>
                         <Typography variant="body1" style={styles.bodyText}>
@@ -106,13 +106,13 @@ function AboutPage() {
                             {'The Oasis is currently seeking an experienced roleplayer to manage event scheduling and coordination.'}
                         </Typography>
                         <figure style={{margin: '0px'}}>
-                            <img src={Zadwick} alt="TBD" style={styles.portrait} />
+                            <img src={Zadwick} alt="TBD" style={styles.portrait} loading='lazy' />
                             <figcaption style={styles.caption}>{'TBD - Oasis Event Coordinator'}</figcaption>
                         </figure>
                     </div>
                     <div style={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
                         <figure style={{margin: '0px'}}>
-                            <img src={Zadwick} alt="TBD" style={styles.portrait} />
+                            <img src={Zadwick} alt="TBD" style={styles.portrait} loading='lazy' />
                             <figcaption style={styles.caption}>{'TBD - Oasis Media Manager'}</figcaption>
                         </figure>
                         <Typography variant="body1" style={styles.bodyText}>

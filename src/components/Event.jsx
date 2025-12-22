@@ -55,7 +55,7 @@ function Event(props) {
             <Typography variant='h1' sx={styles.title}>{title}</Typography>
             <Typography variant='caption' sx={styles.date}>{FormatDate(start, end)}</Typography>
             <Typography variant='body1' sx={styles.description}>{description}</Typography>
-            {banner && <img src={banner} alt={'Event Image'} style={styles.bannerImage} />}
+            {banner && <img src={banner} alt={'Event Image'} style={styles.bannerImage} loading='lazy' />}
             <hr style={styles.divider} />
         </div>
     )
