@@ -1,7 +1,7 @@
 {
     "name": "oasis",
     "compatibility_date": "2025-12-24",
-    "main": "src/index.ts",
+    "main": "src/main.jsx",
     "assets": {
         "directory": "./dist"
     }
