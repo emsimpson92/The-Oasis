@@ -9,14 +9,14 @@ import {
 import { useTheme } from '../hooks/useTheme';
 import ActivityCard from '../components/ActivityCard';
 import '../styles/fonts.css';
-import SpringsImg from '../assets/Springs.webp';
-import DiningImg from '../assets/Dining.webp';
-import NightlifeImg from '../assets/Nightlife.webp';
-import EventsImg from '../assets/Events.webp';
-import RecreationImg from '../assets/Recreation.webp';
-import AccommodationsImg from '../assets/Accommodations.webp';
-import OasisHomeImg from '../assets/OasisHome.webp';
-import DiscordIcon from '../assets/discord-icon.svg';
+import SpringsImg from '../assets/Springs.webp?url';
+import DiningImg from '../assets/Dining.webp?url';
+import NightlifeImg from '../assets/Nightlife.webp?url';
+import EventsImg from '../assets/Events.webp?url';
+import RecreationImg from '../assets/Recreation.webp?url';
+import AccommodationsImg from '../assets/Accommodations.webp?url';
+import OasisHomeImg from '../assets/OasisHome.webp?url';
+import DiscordIcon from '../assets/discord-icon.svg?url';
 
 const Styles = (theme) => {
     return {

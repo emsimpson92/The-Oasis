@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('./CormorantGaramond-Regular.ttf') format('truetype');
+  src: url('/CormorantGaramond-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Arsenica Trial Regular';
-  src: url('./ArsenicaTrial-Regular.ttf') format('truetype');
+  src: url('/ArsenicaTrial-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: 'Arsenica Trial Light';
-  src: url('./ArsenicaTrial-Light.ttf') format('truetype');
+  src: url('/ArsenicaTrial-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;

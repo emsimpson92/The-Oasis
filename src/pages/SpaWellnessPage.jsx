@@ -1,4 +1,4 @@
-import SpaImg from '../assets/Springs.webp';
+import SpaImg from '../assets/Springs.webp?url';
 import Page from '../components/Page';
 import { SpaWellness } from '../data';
 

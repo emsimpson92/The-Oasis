@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
-import Map from '../assets/Map.webp';
+import Map from '../assets/Map.webp?url';
 import '../styles/fonts.css';
 import { Plots } from '../data';
 

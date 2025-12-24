@@ -1,4 +1,4 @@
-import RecreationImg from '../assets/Recreation.webp';
+import RecreationImg from '../assets/Recreation.webp?url';
 import Page from '../components/Page';
 import { Recreation } from '../data';
 

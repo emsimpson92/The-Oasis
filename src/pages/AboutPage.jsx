@@ -3,8 +3,8 @@ import { Box, Container, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
 import '../styles/fonts.css';
-import Zadwick from '../assets/Zadwick.webp';
-import Oasis from '../assets/OasisHome.webp';
+import Zadwick from '../assets/Zadwick.webp?url';
+import Oasis from '../assets/OasisHome.webp?url';
 
 const Styles = (theme) => {
     return {
