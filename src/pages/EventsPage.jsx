@@ -1,4 +1,4 @@
-import EventsImg from '../assets/Events.webp?url';
+import EventsImg from '../assets/Events.webp';
 import Page from '../components/Page';
 import { Venues } from '../data';
 

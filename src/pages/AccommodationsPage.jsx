@@ -1,4 +1,4 @@
-import AccommodationsImg from '../assets/Accommodations.webp?url';
+import AccommodationsImg from '../assets/Accommodations.webp';
 import Page from '../components/Page';
 import { Accommodations } from '../data';
 

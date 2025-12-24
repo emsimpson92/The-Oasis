@@ -1,4 +1,4 @@
-import DiningImg from '../assets/Dining.webp?url';
+import DiningImg from '../assets/Dining.webp';
 import Page from '../components/Page';
 import { Dining } from '../data';
 

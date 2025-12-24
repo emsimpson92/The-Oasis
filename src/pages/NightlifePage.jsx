@@ -1,4 +1,4 @@
-import NightlifeImg from '../assets/Nightlife.webp?url';
+import NightlifeImg from '../assets/Nightlife.webp';
 import Page from '../components/Page';
 import { Nightlife } from '../data';
 
