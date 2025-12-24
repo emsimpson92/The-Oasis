@@ -81,7 +81,7 @@ const Styles = (theme) => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            background: OasisHomeImg,
+            background: `url(${OasisHomeImg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',

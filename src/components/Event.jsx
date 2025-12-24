@@ -26,7 +26,6 @@ const Styles = (theme) => {
         },
         bannerImage: {
             maxHeight: '200px',
-            display: 'block',
             display: 'flex',
             margin: `${theme.spacing.lg} auto`
         }
