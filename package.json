@@ -6,7 +6,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "npm run build && npx wrangler pages deploy ./dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

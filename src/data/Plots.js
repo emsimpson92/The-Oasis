@@ -164,7 +164,7 @@ export const Plots = [
         },
         {
             id: 39,
-            description: 'Available'
+            description: 'Exile\'s Roost'
         }
     ],
     [
@@ -220,7 +220,7 @@ export const Plots = [
         },
         {
             id: 52,
-            description: 'Cliffside Pines Lodge'
+            description: 'Razorwind Pines Lodge'
         },
         {
             id: 53,
