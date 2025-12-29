@@ -24,7 +24,7 @@ const Styles = (theme) => {
             textAlign: 'center',
         },
         eventContainer: {
-            width: '60%',
+            width: '80%',
             margin: 'auto',
             [theme.breakpoints.down('sm')]: {
                 width: '320px'
