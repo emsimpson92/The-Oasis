@@ -5,7 +5,7 @@ export const oasisTheme = {
     background: '#fee6cf',
     primary: '#248CA5',
     header: '#ddca9d',
-    link: '#828b00ff'
+    link: '#6d7500ff'
   },
   typography: {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
