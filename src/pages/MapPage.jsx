@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Map from '../assets/Map.webp';
 import '../styles/fonts.css';
 import { Plots } from '../data';
+import { useTheme as muiTheme } from '@mui/material';
 
 const Styles = (theme) => {
     return {
@@ -44,7 +45,13 @@ const Styles = (theme) => {
         },
         plotContainer: {
             justifyContent: 'space-around', 
-            margin: '0 4rem'
+            margin: '0 4rem',
+            [theme.breakpoints.down('sm')]: {
+                display: 'flex',
+                margin: `0px 0px 0px ${theme.spacing.sm}`,
+                flexDirection: 'column',
+                gap: '0px',
+            },
         },
         plotLabel: {
             display: 'inline', 
@@ -52,20 +59,28 @@ const Styles = (theme) => {
             fontFamily: 'serif',
             fontSize: theme.typography.fontSize.large,
             marginLeft: theme.spacing.sm, 
-            marginBottom: theme.spacing.xs
+            marginBottom: theme.spacing.xs,
+            [theme.breakpoints.down('sm')]: {
+                fontSize: theme.typography.fontSize.base,
+                margin: 'auto'
+            },
         },
         plotDescription: {
             display: 'inline', 
             color: theme.colors.text, 
             marginLeft: theme.spacing.sm, 
-            marginBottom: theme.spacing.xs
+            marginBottom: theme.spacing.xs,
+            [theme.breakpoints.down('sm')]: {
+                fontSize: theme.typography.fontSize.base,
+            },
         }
     };
 };
 
 function MapPage() {
     const theme = useTheme();
-    const styles = Styles(theme);    
+    const mui = muiTheme();
+    const styles = Styles({...mui, ...theme});
     
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -84,17 +99,17 @@ function MapPage() {
                         <Typography variant="h2" style={styles.sectionTitle}>
                             {'Plots'}
                         </Typography>
-                        <Grid container spacing={2} padding={2} style={styles.plotContainer}>
+                        <Grid container spacing={2} padding={2} sx={styles.plotContainer}>
                         {
                             Plots.map((col, index) => (
                                 <Grid item xs={12} md={4} key={index}>
                                 {
                                     col.map((plot) => (
                                         <div key={plot.id}>
-                                            <Typography key={plot.id} variant="body1" style={styles.plotLabel}>
+                                            <Typography key={plot.id} variant="body1" sx={styles.plotLabel}>
                                                 {`Plot ${plot.id}:`}
                                             </Typography>
-                                            <Typography key={plot.id} variant="body1" style={{...styles.plotDescription, color: plot.description === 'Available' ? theme.colors.accent : theme.colors.text}}>
+                                            <Typography key={plot.id} variant="body1" sx={{...styles.plotDescription, color: plot.description === 'Available' ? theme.colors.accent : theme.colors.text}}>
                                                 {plot.description}
                                             </Typography>
                                         </div>

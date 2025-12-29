@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import '../styles/fonts.css';
 import Event from '../components/Event';
 import { Events } from '../data';
+import { useTheme as muiTheme } from '@mui/material';
 
 const Styles = (theme) => {
     return {
@@ -24,7 +25,10 @@ const Styles = (theme) => {
         },
         eventContainer: {
             width: '60%',
-            margin: 'auto'
+            margin: 'auto',
+            [theme.breakpoints.down('sm')]: {
+                width: '320px'
+            },
         },
         text: {
             fontSize: theme.typography.fontSize.base,
@@ -39,7 +43,8 @@ const Styles = (theme) => {
 
 function UpcomingEvents() {
     const theme = useTheme();
-    const styles = Styles(theme);    
+    const mui = muiTheme();
+    const styles = Styles({...mui, ...theme});   
     
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -55,7 +60,7 @@ function UpcomingEvents() {
                 <Typography variant="h6" style={styles.text}>
                     {'All event times are using Moon Guard server time. (CT)'}
                 </Typography>
-                <Box component="section" style={styles.eventContainer}>
+                <Box component="section" sx={styles.eventContainer}>
                 {
                     // Filter out events where the end date has passed
                     // If no end date, use start date + 1 day

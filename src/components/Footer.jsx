@@ -1,6 +1,7 @@
-import { Box, Button, Typography } from '@mui/material'
-import { useTheme } from '../hooks/useTheme'
+import { Box, Button, Typography } from '@mui/material';
+import { useTheme } from '../hooks/useTheme';
 import { Link as RouterLink } from 'react-router-dom';
+import { useTheme as muiTheme } from '@mui/material';
 
 const Styles = (theme) => {
     return {
@@ -29,6 +30,10 @@ const Styles = (theme) => {
         section: {
             minWidth: '150px',
             textAlign: 'left',
+            [theme.breakpoints.down('sm')]: {
+                textAlign: 'center',
+                margin: 'auto'
+            },
         },
         sectionTitle: {
             fontSize: theme.typography.fontSize.large,
@@ -42,14 +47,17 @@ const Styles = (theme) => {
         sectionButton: {
             color: theme.colors.primary,
             textTransform: 'none',
-            textDecoration: 'none',
             fontWeight: 700,
             padding: '4px',
             fontFamily: 'Cormorant Garamond, serif',
             textAlign: 'left',
             display: 'block',
             fontSize: '0.875rem',
-            margin: `${theme.spacing.xs} 0`
+            margin: `${theme.spacing.xs} 0`,
+            [theme.breakpoints.down('sm')]: {
+                textAlign: 'center',
+                margin: 'auto'
+            },
         },
         oasisLogo: {
             width: '60px', 
@@ -59,13 +67,17 @@ const Styles = (theme) => {
         divider: {
             border: `1px solid ${theme.colors.accent}`,
             margin: `${theme.spacing.xs} 0 ${theme.spacing.sm} 0`,
+        },
+        link: {
+            textDecoration: 'none'
         }
     }
 }
 
 function Footer() {
-    const theme = useTheme()
-    const styles = Styles(theme)
+    const theme = useTheme();
+    const mui = muiTheme();
+    const styles = Styles({...mui, ...theme});
 
     return (
         <Box sx={styles.footer}>
@@ -77,19 +89,19 @@ function Footer() {
                 <Box sx={styles.section}>
                     <Typography sx={styles.sectionTitle}>About</Typography>
                     <hr style={styles.divider} />
-                    <RouterLink style={styles.sectionButton} to="/about">What is the Oasis?</RouterLink>
-                    <RouterLink style={styles.sectionButton} to="/map">Community Map</RouterLink>
+                    <RouterLink style={styles.link} to="/about"><Typography sx={styles.sectionButton}>What is the Oasis?</Typography></RouterLink>
+                    <RouterLink style={styles.link} to="/map"><Typography sx={styles.sectionButton}>Community Map</Typography></RouterLink>
                 </Box>
                 <Box sx={styles.section}>
                     <Typography sx={styles.sectionTitle}>Events</Typography>
                     <hr style={styles.divider} />
-                    <RouterLink style={styles.sectionButton} to="/events/upcoming">Upcoming events</RouterLink>
-                    <RouterLink style={styles.sectionButton} to="/events/request">Request an Event</RouterLink>
+                    <RouterLink style={styles.link} to="/events/upcoming"><Typography sx={styles.sectionButton}>Upcoming events</Typography></RouterLink>
+                    <RouterLink style={styles.link} to="/events/request"><Typography sx={styles.sectionButton}>Request an Event</Typography></RouterLink>
                 </Box>
                 <Box sx={styles.section}>
                     <Typography sx={styles.sectionTitle}>Contact</Typography>
                     <hr style={styles.divider} />
-                    <RouterLink style={styles.sectionButton} to="/contact">General Inquiries</RouterLink>
+                    <RouterLink to="/contact" style={styles.link}><Typography sx={styles.sectionButton}>General Inquiries</Typography></RouterLink>
                     <Button variant="inline" onClick={() => window.open('https://discord.gg/AhsnAsSUNK', '_blank', 'noopener,noreferrer')} sx={styles.sectionButton}>Join the Community</Button>
                 </Box>
             </Box>

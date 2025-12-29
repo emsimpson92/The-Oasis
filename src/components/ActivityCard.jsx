@@ -2,6 +2,7 @@ import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { Fragment } from 'react';
+import { useTheme as muiTheme } from '@mui/material';
 
 const Styles = (theme, hasLink) => {
     return {
@@ -9,7 +10,7 @@ const Styles = (theme, hasLink) => {
             backgroundColor: theme.colors.header,
             height: '100%',
             display: 'flex',
-            width: '350px',
+            width: '330px',
             flexDirection: 'column',
             transition: hasLink ? 'transform 0.3s ease' : 'none',
             cursor: hasLink ? 'pointer' : 'default',
@@ -17,7 +18,10 @@ const Styles = (theme, hasLink) => {
                 '&:hover': {
                     transform: 'translateY(-5px)',
                 }
-            })
+            }),
+            [theme.breakpoints.down('sm')]: {
+                maxWidth: '350px',
+            },
         },
         cardTitle: {            
             color: theme.colors.primary,
@@ -54,14 +58,15 @@ const Styles = (theme, hasLink) => {
         content: {
             display: 'flex', 
             flexDirection: 'column',
-            flex: 1
+            flex: 1,
         }
     }
 };
 
 function ActivityCard({ title, description, link, children }) {
     const theme = useTheme();
-    const styles = Styles(theme, !!link);
+    const mui = muiTheme();
+    const styles = Styles({...mui, ...theme}, !!link);
     const hasLink = !!link;
 
     const cardContent = (

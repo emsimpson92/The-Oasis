@@ -17,6 +17,7 @@ import RecreationImg from '../assets/Recreation.webp';
 import AccommodationsImg from '../assets/Accommodations.webp';
 import OasisHomeImg from '../assets/OasisHome.webp';
 import DiscordIcon from '../assets/discord-icon.svg';
+import { useTheme as muiTheme } from '@mui/material';
 
 const Styles = (theme) => {
     return {
@@ -109,6 +110,9 @@ const Styles = (theme) => {
         activitiesSection: {
             padding: theme.spacing.xl,
             backgroundColor: theme.colors.background,
+            [theme.breakpoints.down('sm')]: {
+                padding: `${theme.spacing.lg} 0px`,
+            },
         },
         paradiseHeader: {
             fontSize: theme.typography.fontSize.xxlarge,
@@ -147,8 +151,9 @@ const Styles = (theme) => {
 
 function HomePage() {
     const theme = useTheme();
+    const mui = muiTheme();
     const activitiesRef = useRef(null);
-    const styles = Styles(theme);
+    const styles = Styles({...mui, ...theme});
 
     const handleExplore = (event) => {
         activitiesRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -179,7 +184,7 @@ function HomePage() {
                 <div style={styles.gradientDivider} />
             </Box>
             {/* Activities Section */}
-            <Box component="section" ref={activitiesRef} style={styles.activitiesSection}>
+            <Box component="section" ref={activitiesRef} sx={styles.activitiesSection}>
                 <Typography variant="h2" style={styles.paradiseHeader}>
                     Paradise Begins Here
                 </Typography>

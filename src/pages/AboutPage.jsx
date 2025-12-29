@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import '../styles/fonts.css';
 import Zadwick from '../assets/Zadwick.webp';
 import Oasis from '../assets/OasisHome.webp';
+import { useTheme as muiTheme } from '@mui/material';
 
 const Styles = (theme) => {
     return {
@@ -23,18 +24,27 @@ const Styles = (theme) => {
         divider: {
             border: `1px solid ${theme.colors.accent}`,
             margin: `${theme.spacing.xs} 0 ${theme.spacing.md} 0`,
+            [theme.breakpoints.down('sm')]: {
+                margin: `${theme.spacing.xs} 0`,
+            },
         },
         bodyText: {
             fontFamily: 'Cormorant Garamond, serif',
-            opacity: '0.8'
+            opacity: '0.8',
+            [theme.breakpoints.down('sm')]: {
+                margin: `${theme.spacing.md} 0px`
+            },
         },
         body: {
             display: 'inline-flex',
             flexDirection: 'row',
-            width: '100%'
+            width: '100%',
+            [theme.breakpoints.down('sm')]: {
+                flexDirection: 'column'
+            },
         },
         image: {
-            width: '350px',
+            width: '300px',
             margin: `0 ${theme.spacing.md}`,
             borderRadius: '10px',
             boxShadow: `0 4px 8px rgba(0, 0, 0, 0.2)`,
@@ -43,7 +53,7 @@ const Styles = (theme) => {
             width: '250px',
             margin: `0 ${theme.spacing.md}`,
             borderRadius: '10px',
-            boxShadow: `0 4px 8px rgba(0, 0, 0, 0.2)`,
+            boxShadow: `0 4px 8px rgba(0, 0, 0, 0.2)`
         },
         caption: {
             fontFamily: 'Cormorant Garamond, serif',
@@ -51,13 +61,19 @@ const Styles = (theme) => {
             opacity: '0.7',
             textAlign: 'center',
             margin: `0 ${theme.spacing.md}`,
+        },
+        imageContainer: {
+            [theme.breakpoints.down('sm')]: {
+                margin: '0 auto'
+            }
         }
     };
 };
 
 function AboutPage() {
     const theme = useTheme();
-    const styles = Styles(theme);    
+    const mui = muiTheme();
+    const styles = Styles({...mui, ...theme});
     
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -72,8 +88,8 @@ function AboutPage() {
                         {'About Us'}
                     </Typography>
                     <hr style={styles.divider} />
-                    <div style={styles.body}>
-                        <Typography variant="body1" style={styles.bodyText}>
+                    <Box sx={styles.body}>
+                        <Typography variant="body1" sx={styles.bodyText}>
                             {'The Oasis is a cross-faction, cross-server charter neighborhood originating from Moon Guard. We are a mature, LGBTQ+ friendly group of adults (18+) and '}
                             {'our goal is to provide a thriving community with a heavy focus on RP, partnering with other RP guilds and individuals across World of Warcraft. '}
                             {'Rather than individual player housing, The Oasis puts an emphasis on shared space, where members can come and go as they please. '}
@@ -81,45 +97,53 @@ function AboutPage() {
                             {'The Oasis and its many venues is a prime location to host events, some of which are organized by Oasis staff, and others that are by request. '}
                             {'There is something for everyone at The Oasis.'}
                         </Typography>
-                        <figure style={{margin: '0px'}}>
-                            <img src={Oasis} alt="Oasis" style={styles.image} loading='lazy' />
-                            <figcaption style={styles.caption}>{'One of our many stunning views!'}</figcaption>
-                        </figure>
-                    </div>
+                        <Box sx={styles.imageContainer}>
+                            <figure style={{margin: '0px'}}>
+                                <img src={Oasis} alt="Oasis" style={styles.image} loading='lazy' />
+                                <figcaption style={styles.caption}>{'One of our many stunning views!'}</figcaption>
+                            </figure>
+                        </Box>
+                    </Box>
                     <Typography variant="h1" style={{...styles.pageTitle, marginTop: theme.spacing.sm}}>
                         {'Our Staff'}
                     </Typography>
                     <hr style={styles.divider} />
-                    <div style={{...styles.body, justifyContent: 'flex-start'}}>
-                        <figure style={{margin: '0px'}}>
-                            <img src={Zadwick} alt="Zadwick" style={styles.portrait} loading='lazy' />
-                            <figcaption style={styles.caption}>{'Zadwick - Oasis Community Manager'}</figcaption>
-                        </figure>
-                        <Typography variant="body1" style={styles.bodyText}>
+                    <Box sx={{...styles.body, justifyContent: 'flex-start'}}>
+                        <Box sx={styles.imageContainer}>
+                            <figure style={{margin: '0px'}}>
+                                <img src={Zadwick} alt="Zadwick" style={styles.portrait} loading='lazy' />
+                                <figcaption style={styles.caption}>{'Zadwick - Oasis Community Manager'}</figcaption>
+                            </figure>
+                        </Box>
+                        <Typography variant="body1" sx={styles.bodyText}>
                             {'I\'m Zadwick, the Oasis community manager. I handle general logistics such as reviewing membership applications, discord organization/moderation, '}
                             {'and website maintenance for the Oasis. It is my mission to ensure that everyone who enters the Oasis is treated respectfully and has a good time. '}
                             {'If you have questions or are curious about us, feel free to reach out to me on discord (or you can use our general inquiries page) and I will be happy to assist you!'}
                         </Typography>
-                    </div>
-                    <div style={{...styles.body, justifyContent: 'flex-end', marginTop: theme.spacing.xl}}>
-                        <Typography variant="body1" style={styles.bodyText}>
+                    </Box>
+                    <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
+                        <Box sx={styles.imageContainer}>
+                            <figure style={{margin: '0px'}}>
+                                <img src={Zadwick} alt="TBD" style={styles.portrait} loading='lazy' />
+                                <figcaption style={styles.caption}>{'TBD - Oasis Event Coordinator'}</figcaption>
+                            </figure>
+                        </Box>
+                        <Typography variant="body1" sx={styles.bodyText}>
                             {'The Oasis is currently seeking an experienced roleplayer to manage event scheduling and coordination.'}
                         </Typography>
-                        <figure style={{margin: '0px'}}>
-                            <img src={Zadwick} alt="TBD" style={styles.portrait} loading='lazy' />
-                            <figcaption style={styles.caption}>{'TBD - Oasis Event Coordinator'}</figcaption>
-                        </figure>
-                    </div>
-                    <div style={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
-                        <figure style={{margin: '0px'}}>
-                            <img src={Zadwick} alt="TBD" style={styles.portrait} loading='lazy' />
-                            <figcaption style={styles.caption}>{'TBD - Oasis Media Manager'}</figcaption>
-                        </figure>
-                        <Typography variant="body1" style={styles.bodyText}>
+                    </Box>
+                    <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
+                        <Box sx={styles.imageContainer}>
+                            <figure style={{margin: '0px'}}>
+                                <img src={Zadwick} alt="TBD" style={styles.portrait} loading='lazy' />
+                                <figcaption style={styles.caption}>{'TBD - Oasis Media Manager'}</figcaption>
+                            </figure>
+                        </Box>
+                        <Typography variant="body1" sx={styles.bodyText}>
                             {'The Oasis is currently seeking a member experienced in graphic design that can create promotional graphics for upcoming events. '}
                             {'(Or if you like to use ChatGPT that\'s fine with me too)'}
                         </Typography>
-                    </div>
+                    </Box>
                 </Container>
             </Box>
         </Box>
