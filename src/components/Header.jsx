@@ -63,7 +63,7 @@ const Styles = (theme) => {
             color: theme.colors.primary,
             textTransform: 'none',
             fontSize: theme.typography.fontSize.large,
-            fontFamily: 'serif',
+            fontFamily: 'Arsenica Trial Regular, serif',
             [theme.breakpoints.down('sm')]: {
                 display: 'none'
             },

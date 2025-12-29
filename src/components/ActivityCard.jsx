@@ -37,9 +37,9 @@ const Styles = (theme, hasLink) => {
             flex: 1,
         },
         learnMore: {            
-            color: theme.colors.accent,
+            color: theme.colors.link,
             textDecoration: 'underline',
-            textDecorationColor: theme.colors.accent,
+            textDecorationColor: theme.colors.link,
             textDecorationThickness: '2px',
             textUnderlineOffset: '4px',
             display: 'inline-block',

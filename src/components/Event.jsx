@@ -16,9 +16,11 @@ const Styles = (theme) => {
         date: {
             fontStyle: 'italic',
             fontSize: theme.typography.fontSize.small,
+            color: theme.colors.accent
         },
         description: {
             fontSize: theme.typography.fontSize.large,
+            color: theme.colors.text,
             fontFamily: 'Cormorant Garamond, serif'
         },
         divider: {

@@ -32,9 +32,9 @@ const Styles = (theme) => {
         },
         text: {
             fontSize: theme.typography.fontSize.base,
+            color: theme.colors.text,
             fontWeight: 'bold',
             userSelect: 'none',
-            opacity: '0.7',
             fontFamily: 'serif',
             textAlign: 'center',
         }

@@ -30,7 +30,7 @@ const Styles = (theme) => {
         },
         bodyText: {
             fontFamily: 'Cormorant Garamond, serif',
-            opacity: '0.8',
+            color: theme.colors.text,
             [theme.breakpoints.down('sm')]: {
                 margin: `${theme.spacing.md} 0px`
             },
@@ -58,7 +58,8 @@ const Styles = (theme) => {
         caption: {
             fontFamily: 'Cormorant Garamond, serif',
             fontSize: '.9rem',
-            opacity: '0.7',
+            color: theme.colors.text,
+            opacity: '0.8',
             textAlign: 'center',
             margin: `0 ${theme.spacing.md}`,
         },
