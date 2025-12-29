@@ -1,10 +1,10 @@
 export const oasisTheme = {
   colors: {
-    accent: '#D98F66',
-    text: '#807C66',
-    background: '#F3E5C5',
+    accent: '#c87555',
+    text: '#736a63',
+    background: '#fee6cf',
     primary: '#248CA5',
-    header: '#F0D9A6',
+    header: '#d6cbb2 ',
   },
   typography: {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
