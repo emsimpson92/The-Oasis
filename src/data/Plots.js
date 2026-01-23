@@ -72,7 +72,7 @@ export const Plots = [
         },
         {
             id: 17,
-            description: 'Available'
+            description: 'Pending'
         },
         {
             id: 18,
@@ -148,7 +148,7 @@ export const Plots = [
         },
         {
             id: 35,
-            description: 'Available'
+            description: 'Pending'
         },
         {
             id: 36,
@@ -178,7 +178,7 @@ export const Plots = [
         },
         {
             id: 42,
-            description: 'Available'
+            description: 'Pending'
         },
         {
             id: 43,
@@ -194,7 +194,7 @@ export const Plots = [
         },
         {
             id: 46,
-            description: 'Available'
+            description: 'Pending'
         },
         {
             id: 47,
