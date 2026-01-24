@@ -18,7 +18,7 @@ export const Plots = [
         },
         {
             id: 4,
-            description: 'Available'
+            description: 'Timochka\'s Home'
         },
         {
             id: 5,
@@ -64,7 +64,7 @@ export const Plots = [
         },
         {
             id: 15,
-            description: 'Available'
+            description: 'Tyrin\'s Home'
         },
         {
             id: 16,
@@ -72,7 +72,7 @@ export const Plots = [
         },
         {
             id: 17,
-            description: 'Pending'
+            description: 'Zomalia\'s Home'
         },
         {
             id: 18,
@@ -90,15 +90,15 @@ export const Plots = [
         },
         {
             id: 21,
-            description: 'Available'
+            description: 'Dynastus Hall'
         },
         {
             id: 22,
-            description: 'Available'
+            description: 'Arokha\'s Home'
         },
         {
             id: 23,
-            description: 'Available'
+            description: 'Seniriel\'s Home'
         },
         {
             id: 24,
@@ -148,7 +148,7 @@ export const Plots = [
         },
         {
             id: 35,
-            description: 'Pending'
+            description: 'Teewrecks\' Home'
         },
         {
             id: 36,
@@ -178,7 +178,7 @@ export const Plots = [
         },
         {
             id: 42,
-            description: 'Pending'
+            description: 'Corfear\'s Home'
         },
         {
             id: 43,
@@ -194,7 +194,7 @@ export const Plots = [
         },
         {
             id: 46,
-            description: 'Pending'
+            description: 'Zakami\'s Home'
         },
         {
             id: 47,
