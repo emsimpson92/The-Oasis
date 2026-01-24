@@ -38,7 +38,7 @@ export const Plots = [
         },
         {
             id: 9,
-            description: 'Available'
+            description: 'Exile\'s Roost'
         }
     ],
     [
@@ -164,7 +164,7 @@ export const Plots = [
         },
         {
             id: 39,
-            description: 'Exile\'s Roost'
+            description: 'Available'
         }
     ],
     [
