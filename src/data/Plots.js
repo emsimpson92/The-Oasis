@@ -98,7 +98,7 @@ export const Plots = [
         },
         {
             id: 23,
-            description: 'Seniriel\'s Home'
+            description: 'Rael\'s Research Room'
         },
         {
             id: 24,
