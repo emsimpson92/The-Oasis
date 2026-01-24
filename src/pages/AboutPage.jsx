@@ -141,8 +141,7 @@ function AboutPage() {
                             </figure>
                         </Box>
                         <Typography variant="body1" sx={styles.bodyText}>
-                            {'The Oasis is currently seeking a member experienced in graphic design that can create promotional graphics for upcoming events. '}
-                            {'(Or if you like to use ChatGPT that\'s fine with me too)'}
+                            {'The Oasis is currently seeking a member experienced in graphic design that can create promotional graphics for upcoming events.'}
                         </Typography>
                     </Box>
                 </Container>
