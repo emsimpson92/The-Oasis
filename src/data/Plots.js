@@ -2,7 +2,7 @@ export const Plots = [
     [
         {
             id: 0,
-            description: 'Available'
+            description: 'Rachni\'s Tomb'
         },
         {
             id: 1,
