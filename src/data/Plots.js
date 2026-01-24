@@ -128,7 +128,7 @@ export const Plots = [
     [
         {
             id: 30,
-            description: 'Available'
+            description: 'Gorith\'s Home'
         },
         {
             id: 31,
