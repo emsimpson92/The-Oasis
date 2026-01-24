@@ -38,7 +38,7 @@ export const Plots = [
         },
         {
             id: 9,
-            description: 'Exile\'s Roost'
+            description: 'Lokhana\'s Inn'
         }
     ],
     [
