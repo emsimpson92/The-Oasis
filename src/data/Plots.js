@@ -80,7 +80,7 @@ export const Plots = [
         },
         {
             id: 19,
-            description: 'Available'
+            description: 'Dawngazer\'s Home'
         }
     ],
     [
