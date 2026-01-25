@@ -117,7 +117,7 @@ function AboutPage() {
                             </figure>
                         </Box>
                         <Typography variant="body1" sx={styles.bodyText}>
-                            {'I\'m Zadwick, the Oasis community manager. I handle general logistics such as reviewing membership applications, discord organization/moderation, '}
+                            {'Z handle general logistics such as reviewing membership applications, discord organization/moderation, '}
                             {'and website maintenance for the Oasis. It is my mission to ensure that everyone who enters the Oasis is treated respectfully and has a good time. '}
                             {'If you have questions or are curious about us, feel free to reach out to me on discord (or you can use our general inquiries page) and I will be happy to assist you!'}
                         </Typography>
@@ -136,8 +136,8 @@ function AboutPage() {
                     <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
                         <Box sx={styles.imageContainer}>
                             <figure style={{margin: '0px'}}>
-                                <img src={Zadwick} alt="TBD" style={styles.portrait} loading='lazy' />
-                                <figcaption style={styles.caption}>{'TBD - Oasis Media Manager'}</figcaption>
+                                <img src={Zadwick} alt="Tyrin" style={styles.portrait} loading='lazy' />
+                                <figcaption style={styles.caption}>{'Tyrin - Oasis Media Manager'}</figcaption>
                             </figure>
                         </Box>
                         <Typography variant="body1" sx={styles.bodyText}>

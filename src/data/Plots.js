@@ -164,7 +164,7 @@ export const Plots = [
         },
         {
             id: 39,
-            description: 'Available'
+            description: 'Huranok\'s Home'
         }
     ],
     [
@@ -206,7 +206,7 @@ export const Plots = [
         },
         {
             id: 49,
-            description: 'Available'
+            description: 'Makori\'s Home'
         }
     ],
     [
