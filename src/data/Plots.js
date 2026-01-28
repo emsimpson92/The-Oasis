@@ -38,7 +38,7 @@ export const Plots = [
         },
         {
             id: 9,
-            description: 'Lokhana\'s Inn'
+            description: 'Available'
         }
     ],
     [
