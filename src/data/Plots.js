@@ -148,7 +148,7 @@ export const Plots = [
         },
         {
             id: 35,
-            description: 'Available'
+            description: 'Arkae\'s Home'
         },
         {
             id: 36,
