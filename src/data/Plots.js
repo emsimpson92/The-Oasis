@@ -236,11 +236,15 @@ export const Plots = [
         },
         {
             id: 56,
-            description: 'Name TBD'
+            description: 'The Hull'
         },
         {
             id: 57,
             description: 'Ragewater Springs'
+        },
+        {
+            id: 58,
+            description: 'Name TBD'
         }
     ]
 ];
