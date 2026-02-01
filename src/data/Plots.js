@@ -132,7 +132,7 @@ export const Plots = [
         },
         {
             id: 31,
-            description: 'The Oasis Vineyard & Inn'
+            description: 'Available'
         },
         {
             id: 32,
