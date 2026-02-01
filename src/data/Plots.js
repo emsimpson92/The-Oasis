@@ -136,7 +136,7 @@ export const Plots = [
         },
         {
             id: 32,
-            description: 'Zomalia\'s Home'
+            description: 'The Slurring Murloc'
         },
         {
             id: 33,
