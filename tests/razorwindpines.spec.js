@@ -33,7 +33,7 @@ test('carousel next button changes slide', async ({ page }) => {
   await page.goto('/razorwindpines');
   
   // Scroll to the Gallery section
-  await page.locator('text=Gallery').scrollIntoViewIfNeeded();
+  await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
   await page.waitForTimeout(500);
   
   // Get the initial image name displayed below carousel
@@ -57,7 +57,7 @@ test('carousel previous button changes slide', async ({ page }) => {
   await page.goto('/razorwindpines');
   
   // Scroll to the Gallery section
-  await page.locator('text=Gallery').scrollIntoViewIfNeeded();
+  await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
   await page.waitForTimeout(500);
   
   // Click next button twice to ensure we're not at the first slide

@@ -28,6 +28,7 @@ const Styles = (theme) => {
             color: theme.colors.accent,
             fontWeight: 'bold',
             marginBottom: theme.spacing.sm,
+            zIndex: 2,
             userSelect: 'none',
             fontFamily: 'Arsenica Trial Light, serif',
             textShadow: `0 0 1px teal`,
@@ -36,6 +37,7 @@ const Styles = (theme) => {
             fontSize: '8rem',
             color: theme.colors.accent,
             fontWeight: 'bold',
+            zIndex: 2,
             marginBottom: theme.spacing.xl,
             userSelect: 'none',
             fontFamily: 'Arsenica Trial Regular, serif',
@@ -44,6 +46,7 @@ const Styles = (theme) => {
         exploreButton: {
             color: theme.colors.background,
             padding: `${theme.spacing.sm}`,
+            zIndex: 2,
             fontSize: theme.typography.fontSize.xlarge,
             fontWeight: 'bold',
             zIndex: 2,
@@ -138,6 +141,15 @@ const Styles = (theme) => {
                 textShadow: `0 0 1px ${theme.colors.primary}`,
             },
         },
+        overlay: { 
+            position: 'absolute', 
+            top: 0, 
+            left: 0, 
+            right: 0,
+            bottom: 0, 
+            backgroundColor: 'rgba(0,0,0,0.35)', 
+            zIndex: 1 
+        },
         activityImage: {
             width: '100%', 
             height: '200px', 
@@ -177,6 +189,7 @@ function HomePage() {
             </Button>
             {/* Hero Section */}
             <Box component="section" style={styles.splashPage}>
+                <Box style={styles.overlay} />
                 <Typography variant="h1" style={styles.welcomeHeader}>
                     Welcome to
                 </Typography>

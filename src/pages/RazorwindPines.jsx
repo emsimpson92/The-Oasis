@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import Hls from 'hls.js';
 import useMeta from '../hooks/useMeta';
 import { Box, Button, Container, IconButton, Slide, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useTheme } from '../hooks/useTheme';
 import '../styles/fonts.css';
-import RazorwindVideo from '../assets/RazorwindPines/RazorwindPines.mp4';
 import { useTheme as muiTheme } from '@mui/material';
 import Header from '../components/Header';
 import Entry from '../assets/RazorwindPines/Entry.webp';
@@ -39,7 +39,8 @@ const Styles = (theme) => ({
         height: '100%', 
         objectFit: 'cover', 
         zIndex: 0, 
-        pointerEvents: 'none' 
+        pointerEvents: 'none',
+        border: 'none'
     },
     splashContent: { 
         position: 'relative', 
@@ -120,6 +121,9 @@ const Styles = (theme) => ({
             justifyContent: 'center',
             gap: theme.spacing.lg,
             marginTop: theme.spacing.xl,
+            [theme.breakpoints.down('sm')]: {
+                gap: `0px`
+            },
         },
         carouselButton: {
             color: theme.colors.primary,
@@ -127,6 +131,19 @@ const Styles = (theme) => ({
                 opacity: 0.6,
             },
         },
+        carouselContent: { 
+            position: 'relative', 
+            overflow: 'hidden', 
+            flex: 1, 
+            maxWidth: '600px', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            height: '375px',
+            [theme.breakpoints.down('sm')]: {
+                height: `160px`,
+                minWidth: '250px'
+            },
+        }
 });
 
 function RazorwindPines() {
@@ -135,6 +152,7 @@ function RazorwindPines() {
     const styles = Styles({ ...mui, ...theme });
     const contentRef = useRef(null);
     const aboutRef = useRef(null);
+    const videoRef = useRef(null);
     const [carouselIndex, setCarouselIndex] = useState(0);
     const [direction, setDirection] = useState('left');
     
@@ -171,6 +189,23 @@ function RazorwindPines() {
         window.scrollTo(0, 0);
     }, []);
 
+    // Attach HLS stream to the video element so we can control styling (object-fit: cover)
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+        const streamUrl = 'https://videodelivery.net/39a723bc8aa63519ec03b64abd5505ae/manifest/video.m3u8';
+
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(streamUrl);
+            hls.attachMedia(video);
+            return () => hls.destroy();
+        } else {
+            // Native HLS (Safari)
+            video.src = streamUrl;
+        }
+    }, []);
+
     useMeta({
         title: 'Razorwind Pines Lodge — The Oasis',
         description: "Razorwind Pines Lodge is a cliffside retreat within The Oasis charter neighborhood on Moon Guard. Explore the lodge, Violet Lounge, and gallery.",
@@ -183,7 +218,24 @@ function RazorwindPines() {
         <Box style={styles.root}>
             <Box style={styles.videoWrapper}>
                 <Header transparent />
-                <video src={RazorwindVideo} autoPlay muted loop playsInline style={styles.video} aria-hidden="true" />
+                <video
+                    ref={videoRef}
+                    playsInline
+                    autoPlay
+                    muted
+                    loop
+                    aria-hidden="true"
+                    style={{
+                        border: 'none',
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: '100vw',
+                        height: '100%',
+                        objectFit: 'cover'
+                    }}
+                />
                 <Box style={styles.overlay} />
                 <Box style={styles.splashContent} ref={contentRef}>
                     <Typography variant="h1" style={{ fontSize: '4rem', color: theme.colors.accent, fontFamily: 'Arsenica Trial Regular, serif' }}>
@@ -225,7 +277,7 @@ function RazorwindPines() {
                         <IconButton onClick={handlePrevious} sx={styles.carouselButton} aria-label="previous" size="large">
                             <ArrowBackIcon />
                         </IconButton>
-                        <Box style={{ position: 'relative', overflow: 'hidden', flex: 1, maxWidth: '600px', display: 'flex', justifyContent: 'center', height: '375px' }}>
+                        <Box sx={styles.carouselContent}>
                         {
                             features.map((item, index) => (
                                 <Slide 
