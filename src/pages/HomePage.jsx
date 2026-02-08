@@ -132,7 +132,7 @@ const Styles = (theme) => {
             background: 'transparent',
             color: theme.colors.background,
             border: 'none',
-            zIndex: 1,
+            zIndex: 2,
             textTransform: 'none',
             fontSize: theme.typography.fontSize.xlarge,
             cursor: 'pointer',
