@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import useMeta from '../hooks/useMeta';
 import { Box, Button, Snackbar, SnackbarContent, TextField, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
@@ -51,6 +52,14 @@ function EventRequest() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useMeta({
+        title: 'Event Request — The Oasis',
+        description: 'Request an event in The Oasis charter neighborhood on Moon Guard. Submit your event name, description, and contact character to request scheduling.',
+        url: 'https://www.example.com/events/request',
+        image: 'https://www.example.com/og/eventrequest.svg',
+        canonical: 'https://www.example.com/events/request'
+    });
 
     const handleSubmit = () => { 
         if(formIsValid) {

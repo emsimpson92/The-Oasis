@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import useMeta from '../hooks/useMeta';
 import { Box, Button, Container, IconButton, Slide, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -169,6 +170,14 @@ function RazorwindPines() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useMeta({
+        title: 'Razorwind Pines Lodge — The Oasis',
+        description: "Razorwind Pines Lodge is a cliffside retreat within The Oasis charter neighborhood on Moon Guard. Explore the lodge, Violet Lounge, and gallery.",
+        url: 'https://www.example.com/razorwindpines',
+        image: 'https://www.example.com/og/razorwindpines.svg',
+        canonical: 'https://www.example.com/razorwindpines'
+    });
 
     return (
         <Box style={styles.root}>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import useMeta from '../hooks/useMeta';
 import { Box, Button, Snackbar, SnackbarContent, TextField, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
@@ -64,6 +65,14 @@ function ContactPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useMeta({
+        title: 'Contact — The Oasis',
+        description: 'Contact The Oasis community team for inquiries about membership, events, or general questions about our charter neighborhood on Moon Guard.',
+        url: 'https://www.example.com/contact',
+        image: 'https://www.example.com/og/contact.svg',
+        canonical: 'https://www.example.com/contact'
+    });
 
     const handleSubmit = () => { 
         if(message.content.trim().length > 0) {

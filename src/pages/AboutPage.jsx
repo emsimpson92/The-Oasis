@@ -1,4 +1,5 @@
 import {  useEffect } from 'react';
+import useMeta from '../hooks/useMeta';
 import { Box, Container, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
@@ -79,6 +80,14 @@ function AboutPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useMeta({
+        title: 'About The Oasis — Charter Neighborhood on Moon Guard',
+        description: 'Learn about The Oasis, a cross-faction charter neighborhood on the Moon Guard server focused on roleplay, events, and community in World of Warcraft.',
+        url: 'https://www.example.com/about',
+        image: 'https://www.example.com/og/about.svg',
+        canonical: 'https://www.example.com/about'
+    });
 
     return (
         <Box>

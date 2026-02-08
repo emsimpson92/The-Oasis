@@ -1,0 +1,8 @@
+import { test, expect } from '@playwright/test';
+
+test('razorwindpines page title and description', async ({ page }) => {
+  await page.goto('/razorwindpines');
+  await expect(page).toHaveTitle(/Razorwind Pines Lodge/);
+  const desc = await page.locator('meta[name="description"]').getAttribute('content');
+  expect(desc).toContain('Razorwind Pines Lodge');
+});

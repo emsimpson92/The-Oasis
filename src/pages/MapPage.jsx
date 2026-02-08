@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import useMeta from '../hooks/useMeta';
 import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
@@ -81,6 +82,13 @@ function MapPage() {
     const theme = useTheme();
     const mui = muiTheme();
     const styles = Styles({...mui, ...theme});
+    useMeta({
+        title: 'Explore the Oasis Map — The Oasis',
+        description: 'View plot locations and availability for The Oasis charter neighborhood on Moon Guard. Explore plots, locations, and community points of interest.',
+        url: 'https://www.example.com/map',
+        image: 'https://www.example.com/og/map.svg',
+        canonical: 'https://www.example.com/map'
+    });
     
     useEffect(() => {
         window.scrollTo(0, 0);

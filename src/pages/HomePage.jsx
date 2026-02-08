@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import useMeta from '../hooks/useMeta';
 import {
   Box,
   Button,
@@ -150,6 +151,14 @@ function HomePage() {
     const mui = muiTheme();
     const activitiesRef = useRef(null);
     const styles = Styles({...mui, ...theme});
+
+    useMeta({
+        title: 'The Oasis — Home | The Oasis Charter Neighborhood',
+        description: 'The Oasis is a cross-faction, cross-server charter neighborhood on Moon Guard offering RP, events, and community in World of Warcraft.',
+        url: 'https://www.example.com/',
+        image: 'https://www.example.com/og/home.svg',
+        canonical: 'https://www.example.com/'
+    });
 
     const handleExplore = (event) => {
         activitiesRef.current?.scrollIntoView({ behavior: 'smooth' });
