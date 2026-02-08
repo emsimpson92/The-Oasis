@@ -93,7 +93,7 @@ function AboutPage() {
         <Box>
             <Header />
             <Box style={styles.root}>
-                <Container maxWidth="lg">
+                <Container maxWidth="xl">
                     <Typography variant="h1" style={styles.pageTitle}>
                         {'About Us'}
                     </Typography>

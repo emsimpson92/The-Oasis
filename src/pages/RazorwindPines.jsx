@@ -252,7 +252,7 @@ function RazorwindPines() {
             </Box>
 
             <Box component="section" ref={aboutRef} sx={{ padding: `${theme.spacing.sm} ${theme.spacing.xl} ${theme.spacing.xl}`, backgroundColor: theme.colors.background }}>
-                <Container maxWidth="lg">
+                <Container maxWidth="xl">
                     <Typography variant="h3" style={{ margin: `${theme.spacing.md} 0px 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
                         About Razorwind Pines
                     </Typography>

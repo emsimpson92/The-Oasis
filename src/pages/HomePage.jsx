@@ -205,7 +205,7 @@ function HomePage() {
                 <Typography variant="h2" style={styles.paradiseHeader}>
                     Our Venues
                 </Typography>
-                <Container maxWidth="lg">
+                <Container maxWidth="xl">
                     <Grid container spacing={3} style={{display: 'flex', justifyContent: 'center'}}>
                         <Grid item xs={12} sm={6} md={4} key={1}>
                             <ActivityCard title={'Razorwind Pines Lodge'} description={'A cliffside retreat nestled on the outskirts of the Oasis'} link={'/razorwindpines'}>
