@@ -15,7 +15,7 @@ function loadDotenv() {
       val = val.replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1');
       if (process.env[key] === undefined) process.env[key] = val;
     });
-  } catch (err) {
+  } catch {
     // ignore env loading errors
   }
 }

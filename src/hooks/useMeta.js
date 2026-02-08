@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 
 function setMetaTag(nameOrProperty, value, isProperty = false) {
   if (!value) return;
-  const attr = isProperty ? 'property' : 'name';
   const selector = isProperty ? `[property="${nameOrProperty}"]` : `[name="${nameOrProperty}"]`;
   let el = document.querySelector(`head ${selector}`);
   if (!el) {

@@ -1,6 +1,6 @@
 import { Fragment, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
+import { ThemeProvider } from './context/ThemeProvider';
 import { useTheme } from './hooks/useTheme';
 import Footer from './components/Footer';
 import Header from './components/Header';
