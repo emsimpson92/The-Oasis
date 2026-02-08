@@ -44,6 +44,28 @@ jobs:
           path: playwright-report/
           retention-days: 30
 
+      - name: Notify Discord (success)
+        if: github.ref == 'refs/heads/main' && success()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          payload="{\"content\":\"✅ Build succeeded for ${REPO}@${SHA::7} - #${GITHUB_RUN_NUMBER} (${RUN_URL})\"}"
+          curl -s -H "Content-Type: application/json" -d "$payload" "$DISCORD_WEBHOOK" || true
+
+      - name: Notify Discord (failure)
+        if: github.ref == 'refs/heads/main' && failure()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          payload="{\"content\":\"❌ Build failed for ${REPO}@${SHA::7} - #${GITHUB_RUN_NUMBER} (${RUN_URL})\"}"
+          curl -s -H "Content-Type: application/json" -d "$payload" "$DISCORD_WEBHOOK" || true
+
   deploy:
     name: Deploy to Cloudflare Pages
     runs-on: ubuntu-latest
