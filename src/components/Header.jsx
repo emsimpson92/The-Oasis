@@ -4,10 +4,10 @@ import { useTheme } from '../hooks/useTheme';
 import DiscordIcon from '../assets/discord-icon.svg';
 import { useTheme as muiTheme } from '@mui/material';
 
-const Styles = (theme) => {
+const Styles = (theme, transparent) => {
     return {
         header: {
-            backgroundColor: theme.colors.background,
+            backgroundColor: transparent ? 'transparent' : theme.colors.background,
             padding: `${theme.spacing.sm} ${theme.spacing.lg}`,
             display: 'flex',
             justifyContent: 'space-between',
@@ -71,15 +71,15 @@ const Styles = (theme) => {
     };
 };
 
-function Header() {
+function Header({transparent}) {
     const theme = useTheme();
     const mui = muiTheme();
-    const styles = Styles({...mui, ...theme});
+    const styles = Styles({...mui, ...theme}, transparent);
 
     return (
         <Box sx={styles.header}>
             <RouterLink to="/" style={styles.logo}>
-                <img src='/favicon.svg' alt='Oasis Logo' style={styles.oasisLogo} />
+                {!transparent && <img src='/favicon.svg' alt='Oasis Logo' style={styles.oasisLogo} />}
                 <Typography sx={styles.oasisText}>The Oasis</Typography>
             </RouterLink>
             <Button variant="text" href="https://discord.gg/AhsnAsSUNK" target="_blank" rel="noopener noreferrer" sx={styles.discordButton}>

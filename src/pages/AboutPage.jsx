@@ -93,9 +93,8 @@ function AboutPage() {
                         <Typography variant="body1" sx={styles.bodyText}>
                             {'The Oasis is a cross-faction, cross-server charter neighborhood originating from Moon Guard. We are a mature, LGBTQ+ friendly group of adults (18+) and '}
                             {'our goal is to provide a thriving community with a heavy focus on RP, partnering with other RP guilds and individuals across World of Warcraft. '}
-                            {'Rather than individual player housing, The Oasis puts an emphasis on shared space, where members can come and go as they please. '}
-                            {'Each plot in the Oasis serves a communal purpose. As you explore the Oasis you may find yourself at a cozy bakery, a luxurious hot springs resort, or a dimly lit tavern. '}
-                            {'The Oasis and its many venues is a prime location to host events, some of which are organized by Oasis staff, and others that are by request. '}
+                            {'The Oasis puts an emphasis on personal choice, where your experience is what you make of it. All of our members are free to host events, run shops, or simply roleplay in the neighborhood. '}
+                            {'Many of our plots in the Oasis serve a communal purpose. As you explore the Oasis you may find yourself at a cozy bakery, a luxurious hot springs resort, or a dimly lit tavern. '}
                             {'There is something for everyone at The Oasis.'}
                         </Typography>
                         <Box sx={styles.imageContainer}>
@@ -117,7 +116,7 @@ function AboutPage() {
                             </figure>
                         </Box>
                         <Typography variant="body1" sx={styles.bodyText}>
-                            {'Z handle general logistics such as reviewing membership applications, discord organization/moderation, '}
+                            {'I\'m Zadwick, the Oasis community manager. I handle general logistics such as reviewing membership applications, discord organization/moderation, '}
                             {'and website maintenance for the Oasis. It is my mission to ensure that everyone who enters the Oasis is treated respectfully and has a good time. '}
                             {'If you have questions or are curious about us, feel free to reach out to me on discord (or you can use our general inquiries page) and I will be happy to assist you!'}
                         </Typography>

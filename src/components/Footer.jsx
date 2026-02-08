@@ -24,7 +24,7 @@ const Styles = (theme) => {
             justifyContent: 'space-between',
             gap: theme.spacing.xxl,
             flexWrap: 'wrap',
-            maxWidth: '1000px',
+            maxWidth: '600px',
             margin: '0 auto',
         },
         section: {
@@ -83,7 +83,7 @@ function Footer() {
         <Box sx={styles.footer}>
             <img src='/favicon.svg' alt='Oasis Logo' style={styles.oasisLogo} />
             <Typography variant="h2" sx={styles.title}>
-                Enjoy Your Stay at the Oasis
+                Adventure awaits in the Oasis
             </Typography>
             <Box sx={styles.sectionsContainer}>
                 <Box sx={styles.section}>
@@ -93,15 +93,10 @@ function Footer() {
                     <RouterLink style={styles.link} to="/map"><Typography sx={styles.sectionButton}>Community Map</Typography></RouterLink>
                 </Box>
                 <Box sx={styles.section}>
-                    <Typography sx={styles.sectionTitle}>Events</Typography>
-                    <hr style={styles.divider} />
-                    <RouterLink style={styles.link} to="/events/upcoming"><Typography sx={styles.sectionButton}>Upcoming events</Typography></RouterLink>
-                    <RouterLink style={styles.link} to="/events/request"><Typography sx={styles.sectionButton}>Request an Event</Typography></RouterLink>
-                </Box>
-                <Box sx={styles.section}>
                     <Typography sx={styles.sectionTitle}>Contact</Typography>
                     <hr style={styles.divider} />
                     <RouterLink to="/contact" style={styles.link}><Typography sx={styles.sectionButton}>General Inquiries</Typography></RouterLink>
+                    <RouterLink style={styles.link} to="/events/request"><Typography sx={styles.sectionButton}>Request an Event</Typography></RouterLink>
                     <Button variant="inline" onClick={() => window.open('https://discord.gg/AhsnAsSUNK', '_blank', 'noopener,noreferrer')} sx={styles.sectionButton}>Join the Community</Button>
                 </Box>
             </Box>

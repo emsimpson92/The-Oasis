@@ -170,7 +170,7 @@ export const Plots = [
     [
         {
             id: 40,
-            description: 'Anvani\'s Home'
+            description: 'Available'
         },
         {
             id: 41,
@@ -244,7 +244,7 @@ export const Plots = [
         },
         {
             id: 58,
-            description: 'Name TBD'
+            description: 'Flarebrew Cavern'
         }
     ]
 ];

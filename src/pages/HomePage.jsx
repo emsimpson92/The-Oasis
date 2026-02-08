@@ -9,13 +9,9 @@ import {
 import { useTheme } from '../hooks/useTheme';
 import ActivityCard from '../components/ActivityCard';
 import '../styles/fonts.css';
-import SpringsImg from '../assets/Springs.webp';
-import DiningImg from '../assets/Dining.webp';
-import NightlifeImg from '../assets/Nightlife.webp';
-import EventsImg from '../assets/Events.webp';
-import RecreationImg from '../assets/Recreation.webp';
-import AccommodationsImg from '../assets/Accommodations.webp';
 import OasisHomeImg from '../assets/OasisHome.webp';
+import LibraryLower from '../assets/RazorwindPines/LibraryLower.webp';
+import SlurringMurloc1 from '../assets/SlurringMurloc/SlurringMurloc1.webp';
 import DiscordIcon from '../assets/discord-icon.svg';
 import { useTheme as muiTheme } from '@mui/material';
 
@@ -186,38 +182,18 @@ function HomePage() {
             {/* Activities Section */}
             <Box component="section" ref={activitiesRef} sx={styles.activitiesSection}>
                 <Typography variant="h2" style={styles.paradiseHeader}>
-                    Paradise Begins Here
+                    Our Venues
                 </Typography>
                 <Container maxWidth="lg">
                     <Grid container spacing={3} style={{display: 'flex', justifyContent: 'center'}}>
                         <Grid item xs={12} sm={6} md={4} key={1}>
-                            <ActivityCard title={'Spa & Wellness'} description={'Relax and rejuvenate at our hot springs resort'} link={'/wellness'}>
-                                <img src={SpringsImg} alt={'Wellness'} style={styles.activityImage} loading='lazy' />
+                            <ActivityCard title={'Razorwind Pines Lodge'} description={'A cliffside retreat nestled on the outskirts of the Oasis'} link={'/razorwindpines'}>
+                                <img src={LibraryLower} alt={'Razorwind Pines'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={2}>
-                            <ActivityCard title={'Dining'} description={'Exquisite culinary experiences crafted by renowned chefs'} link={'/dining'}>
-                                <img src={DiningImg} alt={'Dining'} style={styles.activityImage} loading='lazy' />
-                            </ActivityCard>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} key={3}>
-                            <ActivityCard title={'Nightlife'} description={'Experience vibrant nightlife and entertainment'} link={'/nightlife'}>
-                                <img src={NightlifeImg} alt={'Nightlife'} style={styles.activityImage} loading='lazy' />
-                            </ActivityCard>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} key={4}>
-                            <ActivityCard title={'Events'} description={'Host your special occasions in our stunning venues'} link={'/events'}>
-                                <img src={EventsImg} alt={'Events'} style={styles.activityImage} loading='lazy' />
-                            </ActivityCard>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} key={5}>
-                            <ActivityCard title={'Recreation'} description={'Enjoy waterfalls, beaches, and outdoor adventures'} link={'/recreation'}>
-                                <img src={RecreationImg} alt={'Recreation'} style={styles.activityImage} loading='lazy' />
-                            </ActivityCard>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} key={6}>
-                            <ActivityCard title={'Accommodations'} description={'Luxurious rooms with breathtaking views'} link={'/accommodations'}>
-                                <img src={AccommodationsImg} alt={'Accommodations'} style={styles.activityImage} loading='lazy' />
+                            <ActivityCard title={'The Slurring Murloc'} description={'A beachside tiki bar with an outdoor stage for live music'} link={'/slurringmurloc'}>
+                                <img src={SlurringMurloc1} alt={'The Slurring Murloc'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                     </Grid>
