@@ -101,10 +101,13 @@ const Styles = (theme) => {
         },
         gradientDivider: {
             height: '70px',
-            width: '100vw',
+            width: '100%',
             background: `linear-gradient(to bottom, transparent, ${theme.colors.background})`,
             position: 'absolute',
             bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: 3,
         },
         activitiesSection: {
             padding: theme.spacing.xl,
