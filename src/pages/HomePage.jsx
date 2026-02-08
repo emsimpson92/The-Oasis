@@ -49,7 +49,6 @@ const Styles = (theme) => {
             zIndex: 2,
             fontSize: theme.typography.fontSize.xlarge,
             fontWeight: 'bold',
-            zIndex: 2,
             textTransform: 'none',
             position: 'relative',
             transition: 'all 0.3s ease',
