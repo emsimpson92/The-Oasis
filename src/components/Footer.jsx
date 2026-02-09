@@ -60,8 +60,8 @@ const Styles = (theme) => {
             },
         },
         oasisLogo: {
-            width: '60px', 
-            height: '60px', 
+            width: '180px', 
+            height: '180px', 
             userSelect: 'none',
         },
         divider: {
@@ -83,7 +83,7 @@ function Footer() {
         <Box sx={styles.footer}>
             <img src='/favicon.svg' alt='Oasis Logo' style={styles.oasisLogo} />
             <Typography variant="h2" sx={styles.title}>
-                Adventure awaits in the Oasis
+                Experience the Oasis
             </Typography>
             <Box sx={styles.sectionsContainer}>
                 <Box sx={styles.section}>
