@@ -10,7 +10,7 @@ export const Plots = [
         },
         {
             id: 2,
-            description: 'Available'
+            description: 'Myshkiin\'s Home'
         },
         {
             id: 3,
