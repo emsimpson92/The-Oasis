@@ -1,24 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Hls from 'hls.js';
 import useMeta from '../hooks/useMeta';
-import { Box, Button, Container, IconButton, Slide, Typography } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Box, Button, Container, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import '../styles/fonts.css';
 import { useTheme as muiTheme } from '@mui/material';
 import Header from '../components/Header';
-import Entry from '../assets/RazorwindPines/Entry.webp';
-import BanquetHall from '../assets/RazorwindPines/BanquetHall.webp';
-import KafaShop from '../assets/RazorwindPines/KafaShop.webp';
-import Kitchen1 from '../assets/RazorwindPines/Kitchen1.webp';
-import Kitchen2 from '../assets/RazorwindPines/Kitchen2.webp';
-import LibraryLower from '../assets/RazorwindPines/LibraryLower.webp';
-import LibraryUpper from '../assets/RazorwindPines/LibraryUpper.webp';
-import VioletLounge1 from '../assets/RazorwindPines/VioletLounge1.webp';
-import VioletLounge2 from '../assets/RazorwindPines/VioletLounge2.webp';
-import ZadsOffice from '../assets/RazorwindPines/ZadsOffice.webp';
-import LodgeDeck from '../assets/RazorwindPines/LodgeDeck.webp';
 
 const Styles = (theme) => ({
     root: { 
