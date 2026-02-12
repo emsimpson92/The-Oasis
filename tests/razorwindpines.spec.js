@@ -24,8 +24,8 @@ test('about button scrolls to about section', async ({ page }) => {
   const newScrollY = await page.evaluate(() => window.scrollY);
   expect(newScrollY).toBeGreaterThan(initialScrollY);
   
-  // Verify that the "About Razorwind Pines" text is visible
-  const aboutHeader = page.locator('text=About Razorwind Pines');
+  // Verify that the "About" text is visible
+  const aboutHeader = page.getByRole('heading', { name: 'About' });
   await expect(aboutHeader).toBeVisible();
 });
 
