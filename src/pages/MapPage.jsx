@@ -85,9 +85,9 @@ function MapPage() {
     useMeta({
         title: 'Explore the Oasis Map — The Oasis',
         description: 'View plot locations and availability for The Oasis charter neighborhood on Moon Guard. Explore plots, locations, and community points of interest.',
-        url: 'https://www.example.com/map',
-        image: 'https://www.example.com/og/map.svg',
-        canonical: 'https://www.example.com/map'
+        url: 'https://www.oasismoonguard.com/map',
+        image: 'https://www.oasismoonguard.com/og/map.svg',
+        canonical: 'https://www.oasismoonguard.com/map'
     });
     
     useEffect(() => {

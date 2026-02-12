@@ -84,9 +84,9 @@ function AboutPage() {
     useMeta({
         title: 'About The Oasis — Charter Neighborhood on Moon Guard',
         description: 'Learn about The Oasis, a cross-faction charter neighborhood on the Moon Guard server focused on roleplay, events, and community in World of Warcraft.',
-        url: 'https://www.example.com/about',
-        image: 'https://www.example.com/og/about.svg',
-        canonical: 'https://www.example.com/about'
+        url: 'https://www.oasismoonguard.com/about',
+        image: 'https://www.oasismoonguard.com/og/about.svg',
+        canonical: 'https://www.oasismoonguard.com/about'
     });
 
     return (

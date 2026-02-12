@@ -13,6 +13,7 @@ import '../styles/fonts.css';
 import OasisHomeImg from '../assets/OasisHome.webp';
 import LibraryLower from '../assets/RazorwindPines/LibraryLower.webp';
 import SlurringMurloc1 from '../assets/SlurringMurloc/SlurringMurloc1.webp';
+import CrookedKey from '../assets/CrookedKey/CrookedKey.webp';
 import DiscordIcon from '../assets/discord-icon.svg';
 import { useTheme as muiTheme } from '@mui/material';
 
@@ -169,9 +170,9 @@ function HomePage() {
     useMeta({
         title: 'The Oasis — Home | The Oasis Charter Neighborhood',
         description: 'The Oasis is a cross-faction, cross-server charter neighborhood on Moon Guard offering RP, events, and community in World of Warcraft.',
-        url: 'https://www.example.com/',
-        image: 'https://www.example.com/og/home.svg',
-        canonical: 'https://www.example.com/'
+        url: 'https://www.oasismoonguard.com/',
+        image: 'https://www.oasismoonguard.com/og/home.svg',
+        canonical: 'https://www.oasismoonguard.com/'
     });
 
     const handleExplore = (event) => {
@@ -211,12 +212,17 @@ function HomePage() {
                 <Container maxWidth="xl">
                     <Grid container spacing={3} style={{display: 'flex', justifyContent: 'center'}}>
                         <Grid item xs={12} sm={6} md={4} key={1}>
-                            <ActivityCard title={'Razorwind Pines Lodge'} description={'A cliffside retreat nestled on the outskirts of the Oasis'} link={'/razorwindpines'}>
+                            <ActivityCard title={'Razorwind Pines Lodge'} description={'Cliffside retreat nestled on the outskirts of the Oasis'} link={'/razorwindpines'}>
                                 <img src={LibraryLower} alt={'Razorwind Pines'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={2}>
-                            <ActivityCard title={'The Slurring Murloc'} description={'A beachside tiki bar with an outdoor stage for live music'} link={'/slurringmurloc'}>
+                            <ActivityCard title={'The Crooked Key'} description={'Pandaren Pub & Piano Theater'} link={'/crookedkey'}>
+                                <img src={CrookedKey} alt={'The Crooked Key'} style={styles.activityImage} loading='lazy' />
+                            </ActivityCard>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} key={3}>
+                            <ActivityCard title={'The Slurring Murloc'} description={'Beachside tiki bar with an outdoor stage for live music'} link={'/slurringmurloc'}>
                                 <img src={SlurringMurloc1} alt={'The Slurring Murloc'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>

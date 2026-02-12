@@ -7,6 +7,7 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 const MapPage = lazy(() => import('./pages/MapPage'));
 const RazorwindPines = lazy(() => import('./pages/RazorwindPines'));
+const CrookedKey = lazy(() => import('./pages/CrookedKey'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -29,6 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/map" element={<Suspense fallback={background}><MapPage /></Suspense>} />
+            <Route path="/crookedkey" element={<Suspense fallback={background}><CrookedKey /></Suspense>} />
             <Route path="/razorwindpines" element={<Suspense fallback={background}><RazorwindPines /></Suspense>} />
             <Route path="/slurringmurloc" element={<Suspense fallback={background}><ComingSoon /></Suspense>} />
             <Route path="/about" element={<Suspense fallback={background}><AboutPage /></Suspense>} />

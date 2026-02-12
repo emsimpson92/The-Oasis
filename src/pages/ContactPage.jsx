@@ -69,9 +69,9 @@ function ContactPage() {
     useMeta({
         title: 'Contact — The Oasis',
         description: 'Contact The Oasis community team for inquiries about membership, events, or general questions about our charter neighborhood on Moon Guard.',
-        url: 'https://www.example.com/contact',
-        image: 'https://www.example.com/og/contact.svg',
-        canonical: 'https://www.example.com/contact'
+        url: 'https://www.oasismoonguard.com/contact',
+        image: 'https://www.oasismoonguard.com/og/contact.svg',
+        canonical: 'https://www.oasismoonguard.com/contact'
     });
 
     const handleSubmit = () => { 

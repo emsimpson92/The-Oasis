@@ -146,39 +146,13 @@ const Styles = (theme) => ({
         }
 });
 
-function RazorwindPines() {
+function CrookedKey() {
     const theme = useTheme();
     const mui = muiTheme();
     const styles = Styles({ ...mui, ...theme });
     const contentRef = useRef(null);
     const aboutRef = useRef(null);
     const videoRef = useRef(null);
-    const [carouselIndex, setCarouselIndex] = useState(0);
-    const [direction, setDirection] = useState('left');
-    
-    const features = [
-        { name: 'Foyer', image: Entry },
-        { name: 'Banquet Hall', image: BanquetHall },
-        { name: 'Kitchen', image: Kitchen1 },
-        { name: 'Kitchen', image: Kitchen2 },
-        { name: 'Libary (Lower)', image: LibraryLower },
-        { name: 'Library (Upper)', image: LibraryUpper },
-        { name: 'Kafa Shop', image: KafaShop },
-        { name: "Zadwick's Office", image: ZadsOffice },
-        { name: 'The Violet Lounge', image: VioletLounge1 },
-        { name: 'The Violet Lounge', image: VioletLounge2 },
-        { name: 'The Upper Deck', image: LodgeDeck },
-    ];
-    
-    const handlePrevious = () => {
-        setDirection('right');
-        setCarouselIndex((prev) => (prev === 0 ? features.length - 1 : prev - 1));
-    };
-    
-    const handleNext = () => {
-        setDirection('left');
-        setCarouselIndex((prev) => (prev === features.length - 1 ? 0 : prev + 1));
-    };
     
     const handleExplore = (event) => {
         aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -193,7 +167,7 @@ function RazorwindPines() {
     useEffect(() => {
         const video = videoRef.current;
         if (!video) return;
-        const streamUrl = 'https://videodelivery.net/39a723bc8aa63519ec03b64abd5505ae/manifest/video.m3u8';
+        const streamUrl = 'https://videodelivery.net/0be8bf58a602973f62859f5d2944f3de/manifest/video.m3u8';
 
         if (Hls.isSupported()) {
             const hls = new Hls();
@@ -207,11 +181,11 @@ function RazorwindPines() {
     }, []);
 
     useMeta({
-        title: 'Razorwind Pines Lodge — The Oasis',
-        description: "Razorwind Pines Lodge is a cliffside retreat within The Oasis charter neighborhood on Moon Guard. Explore the lodge, Violet Lounge, and gallery.",
-        url: 'https://www.oasismoonguard.com/razorwindpines',
-        image: 'https://www.oasismoonguard.com/og/razorwindpines.svg',
-        canonical: 'https://www.oasismoonguard.com/razorwindpines'
+        title: 'The Crooked Key — The Oasis',
+        description: "The Crooked Key is a Pandaren pub and piano theater within The Oasis charter neighborhood on Moon Guard.",
+        url: 'https://www.oasismoonguard.com/crookedkey',
+        image: 'https://www.oasismoonguard.com/og/crookedkey.svg',
+        canonical: 'https://www.oasismoonguard.com/crookedkey'
     });
 
     return (
@@ -239,10 +213,10 @@ function RazorwindPines() {
                 <Box style={styles.overlay} />
                 <Box style={styles.splashContent} ref={contentRef}>
                     <Typography variant="h1" style={{ fontSize: '4rem', color: theme.colors.accent, fontFamily: 'Arsenica Trial Regular, serif' }}>
-                        Razorwind Pines Lodge
+                        The Crooked Key
                     </Typography>
-                    <Typography variant="h2" style={{ fontSize: '1.5rem', fontFamily: 'Cormorant Garamond, serif', color: theme.colors.primary, marginTop: theme.spacing.md }}>
-                        Home to the exclusive Violet Lounge
+                    <Typography variant="h2" style={{ fontSize: '1.5rem', fontFamily: 'Cormorant Garamond, serif', color: theme.colors.primary, marginTop: theme.spacing.md, textShadow: `0 0 1px ${theme.colors.header}` }}>
+                        “Where Every Evening Finds Its Melody”
                     </Typography>
                     <Button variant="inline" size="large" onClick={handleExplore} sx={styles.exploreButton}>
                         About
@@ -257,51 +231,98 @@ function RazorwindPines() {
                         About
                     </Typography>
                     <Typography variant="subtitle1" style={{fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: theme.colors.text, fontSize: theme.typography.fontSize.large}}>
-                        Oasis #52
+                        Oasis #43
                     </Typography>
                     <Typography variant="body1" sx={styles.bodyText}>
-                        {'Razorwind Pines Lodge is a cozy retreat perched on the cliffs overlooking the Oasis. '}
-                        {'Known for its rustic charm and breathtaking views, the lodge offers a serene escape from the bustling activities of the Oasis. '}
-                        {'Guests can enjoy the tranquil atmosphere, explore nearby hiking trails, or simply relax by the fireplace with a warm drink. '}
-                        {'The lodge\'s unique location provides stunning sunsets and a peaceful ambiance, making it a favorite spot for those seeking solitude and natural beauty.'}                        
+                        {'Nestled beneath warm lantern light and rough bamboo beams, The Crooked Key welcomes travelers, performers, and connoisseurs alike. '}
+                        {'Guests gather for honeyed meads, sizzling hibachi plates, and nightly piano performances that drift like silk across the room. '}
+                        {'The stage hosts musicians, storytellers, and wandering bards, while the bar serves specialty brews crafted with care and tradition. '}
                     </Typography>
                     <br />
                     <Typography variant="body1" sx={styles.bodyText}>
-                        {'Razorwind Pines Lodge is also home to the renowned Violet Lounge, an exclusive members-only bar known for its intimate atmosphere. '}
-                        {'The lounge features a curated menu of rare vintages, making it a must-visit destination for connoisseurs and casual drinkers alike. '}                        
+                        {'At The Crooked Key, refinement and comfort share the same table. It is a place to unwind, celebrate, and lose track of time beneath gentle music and golden light. '}
                     </Typography>
-                    <Typography variant="h3" style={{ margin: `${theme.spacing.md} 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
-                        Gallery
+                    <Typography variant="h4" style={{ margin: `${theme.spacing.md} 0px ${theme.spacing.sm}`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
+                        House Specialties
                     </Typography>
-                    <Box sx={styles.carouselContainer}>
-                        <IconButton onClick={handlePrevious} sx={styles.carouselButton} aria-label="previous" size="large">
-                            <ArrowBackIcon />
-                        </IconButton>
-                        <Box sx={styles.carouselContent}>
-                        {
-                            features.map((item, index) => (
-                                <Slide 
-                                    key={index}
-                                    direction={direction} 
-                                    in={carouselIndex === index} 
-                                    mountOnEnter 
-                                    unmountOnExit
-                                    timeout={{ enter: 300, exit: 300 }}
-                                    style={{ position: 'absolute', width: '100%', height: '100%' }}
-                                >
-                                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100%', transition: 'opacity 0.6s ease-in-out' }}>
-                                        <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px', transition: 'opacity 0.6s ease-in-out' }} loading='lazy' />
-                                    </div>
-                                </Slide>
-                            ))
-                        }
-                        </Box>
-                        <IconButton onClick={handleNext} sx={styles.carouselButton} aria-label="next" size="large">
-                            <ArrowForwardIcon />
-                        </IconButton>
-                    </Box>
-                    <Typography variant="body1" style={{ textAlign: 'center', color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif', fontSize: theme.typography.fontSize.large, marginTop: theme.spacing.sm }}>
-                        {features[carouselIndex].name}
+                    <ul style={{
+                        fontFamily: 'Cormorant Garamond, serif',
+                        fontSize: theme.typography.fontSize.large,
+                        color: theme.colors.text,
+                        marginLeft: theme.spacing.sm,
+                        margin: '8px',
+                        lineHeight: '1.8',
+                    }}>
+                        <li>Artisan meads and rare infusions</li>
+                        <li>Hibachi grill selections and delicacies</li>
+                        <li>Evening piano recitals and open performance nights</li>
+                        <li>Rotating seasonal menus</li>
+                    </ul>
+                    <hr style={{color: theme.colors.text, opacity: 0.2, marginTop: theme.spacing.md}} />
+                    <Typography variant="h5" style={{ margin: `${theme.spacing.md} 0px`, fontStyle: 'italic', color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
+                        A Note to the Observant Guest
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Those who linger after the final encore...'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Those who notice the curtain that was not there before...'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Those who follow a whisper instead of a sign...'}
+                    </Typography>
+                    <br />
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'May discover that The Crooked Key holds more than one stage.'}
+                    </Typography>
+                    <br />
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'A Place of Brass and Bold Spirits'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Laughter echoes alongside the sharp crack of billiard breaks and the soft clink of wagering coins. '}
+                        {'Patrons jokingly refer to it as Rack & Ruin, though staff simply smile when asked.'}
+                    </Typography>
+                    <br />
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'A Mark Etched in Green Flame'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'A chamber behind an unassuming curtain, where fel light glows softly and illusions dance for those who dare to indulge curiosity and seek quiet conversation. '}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Some call it The Twisted Sigil, though no official door bears the name.'}
+                    </Typography>
+                    <br />
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'And Then… There Is the Amethyst Veil'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Rarely spoken of.'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Rarely seen.'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'A shimmer of violet light glimpsed only by chance — or invitation.'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Some insist it is merely reflection from polished crystal. Others know better.'}
+                    </Typography>
+                    <Typography variant="h6" sx={{ margin: `${theme.spacing.sm} 0px ${theme.spacing.sm}`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
+                        {'House Courtesy'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Respect performers and patrons alike.'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Discretion is appreciated.'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Not every door is meant for every guest.'}
+                    </Typography>
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Music is for all — discovery is for the willing.'}
                     </Typography>
                 </Container>
             </Box>
@@ -309,4 +330,4 @@ function RazorwindPines() {
     );
 }
 
-export default RazorwindPines;
+export default CrookedKey;

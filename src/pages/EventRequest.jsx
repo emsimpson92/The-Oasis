@@ -56,9 +56,9 @@ function EventRequest() {
     useMeta({
         title: 'Event Request — The Oasis',
         description: 'Request an event in The Oasis charter neighborhood on Moon Guard. Submit your event name, description, and contact character to request scheduling.',
-        url: 'https://www.example.com/events/request',
-        image: 'https://www.example.com/og/eventrequest.svg',
-        canonical: 'https://www.example.com/events/request'
+        url: 'https://www.oasismoonguard.com/events/request',
+        image: 'https://www.oasismoonguard.com/og/eventrequest.svg',
+        canonical: 'https://www.oasismoonguard.com/events/request'
     });
 
     const handleSubmit = () => { 

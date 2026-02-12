@@ -23,7 +23,7 @@ function loadDotenv() {
 loadDotenv();
 
 // Config: base URL for sitemap. Override with SITEMAP_BASE env var.
-const BASE = process.env.SITEMAP_BASE || 'https://www.example.com';
+const BASE = process.env.SITEMAP_BASE || 'https://www.oasismoonguard.com';
 const APP_PATH = path.join(process.cwd(), 'src', 'App.jsx');
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const OUT_FILE = path.join(PUBLIC_DIR, 'sitemap.xml');
