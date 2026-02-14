@@ -4,6 +4,7 @@ import { Box, Container, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
 import '../styles/fonts.css';
+import Gorukh from '../assets/Gorukh.webp';
 import Zadwick from '../assets/Zadwick.webp';
 import Oasis from '../assets/OasisHome.webp';
 import { useTheme as muiTheme } from '@mui/material';
@@ -45,14 +46,19 @@ const Styles = (theme) => {
             },
         },
         image: {
-            width: '300px',
-            margin: `0 ${theme.spacing.md}`,
+            width: '350px',
             borderRadius: '10px',
             boxShadow: `0 4px 8px rgba(0, 0, 0, 0.2)`,
         },
-        portrait: {
-            width: '250px',
+        imageBox: {
             margin: `0 ${theme.spacing.md}`,
+            [theme.breakpoints.down('sm')]: {
+                margin: '0'
+            }
+        },
+        portrait: {
+            width: '350px',
+            marginRight: theme.spacing.md,
             borderRadius: '10px',
             boxShadow: `0 4px 8px rgba(0, 0, 0, 0.2)`
         },
@@ -108,7 +114,7 @@ function AboutPage() {
                         </Typography>
                         <Box sx={styles.imageContainer}>
                             <figure style={{margin: '0px'}}>
-                                <img src={Oasis} alt="Oasis" style={styles.image} loading='lazy' />
+                                <Box sx={styles.imageBox}><img src={Oasis} style={styles.image} alt="Oasis" loading='lazy' /></Box>
                                 <figcaption style={styles.caption}>{'One of our many stunning views!'}</figcaption>
                             </figure>
                         </Box>
@@ -133,23 +139,13 @@ function AboutPage() {
                     <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
                         <Box sx={styles.imageContainer}>
                             <figure style={{margin: '0px'}}>
-                                <img src={Zadwick} alt="TBD" style={styles.portrait} loading='lazy' />
-                                <figcaption style={styles.caption}>{'TBD - Oasis Event Coordinator'}</figcaption>
+                                <img src={Gorukh} alt="Gorukh" style={styles.portrait} loading='lazy' />
+                                <figcaption style={styles.caption}>{'Gorukh - Razorwind Pines Caretaker'}</figcaption>
                             </figure>
                         </Box>
                         <Typography variant="body1" sx={styles.bodyText}>
-                            {'The Oasis is currently seeking an experienced roleplayer to manage event scheduling and coordination.'}
-                        </Typography>
-                    </Box>
-                    <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
-                        <Box sx={styles.imageContainer}>
-                            <figure style={{margin: '0px'}}>
-                                <img src={Zadwick} alt="Tyrin" style={styles.portrait} loading='lazy' />
-                                <figcaption style={styles.caption}>{'Tyrin - Oasis Media Manager'}</figcaption>
-                            </figure>
-                        </Box>
-                        <Typography variant="body1" sx={styles.bodyText}>
-                            {'The Oasis is currently seeking a member experienced in graphic design that can create promotional graphics for upcoming events.'}
+                            {'Gorukh is the groundskeeper and caretaker of Razorwind Pines Lodge. He is responsible for maintaining the lodge and its surrounding areas, ensuring that it remains a welcoming and comfortable space for all visitors. '}
+                            {'He operates the lodge\'s exclusive violet lounge, where he serves a hand picked selection of the finest wines and spirits from across Azeroth.'}
                         </Typography>
                     </Box>
                 </Container>

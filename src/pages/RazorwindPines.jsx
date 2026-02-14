@@ -193,7 +193,7 @@ function RazorwindPines() {
     useEffect(() => {
         const video = videoRef.current;
         if (!video) return;
-        const streamUrl = 'https://videodelivery.net/39a723bc8aa63519ec03b64abd5505ae/manifest/video.m3u8';
+        const streamUrl = 'https://videodelivery.net/d1761536e334c27c8adde62fe7673480/manifest/video.m3u8';
 
         if (Hls.isSupported()) {
             const hls = new Hls();
@@ -236,7 +236,6 @@ function RazorwindPines() {
                         objectFit: 'cover'
                     }}
                 />
-                <Box style={styles.overlay} />
                 <Box style={styles.splashContent} ref={contentRef}>
                     <Typography variant="h1" style={{ fontSize: '4rem', color: theme.colors.accent, fontFamily: 'Arsenica Trial Regular, serif' }}>
                         Razorwind Pines Lodge

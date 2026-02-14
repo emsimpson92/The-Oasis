@@ -154,7 +154,7 @@ function CrookedKey() {
     useEffect(() => {
         const video = videoRef.current;
         if (!video) return;
-        const streamUrl = 'https://videodelivery.net/0be8bf58a602973f62859f5d2944f3de/manifest/video.m3u8';
+        const streamUrl = 'https://videodelivery.net/76ed4d25140a8e588c346cbf901aeb85/manifest/video.m3u8';
 
         if (Hls.isSupported()) {
             const hls = new Hls();

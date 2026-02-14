@@ -52,7 +52,7 @@ export const Plots = [
         },
         {
             id: 12,
-            description: 'Dogebones\' Home'
+            description: 'Ogin\'s Home'
         },
         {
             id: 13,
@@ -106,7 +106,7 @@ export const Plots = [
         },
         {
             id: 25,
-            description: 'Cassidy\'s Home'
+            description: 'Available'
         },
         {
             id: 26,
@@ -156,7 +156,7 @@ export const Plots = [
         },
         {
             id: 37,
-            description: 'Available'
+            description: 'Dogebones\' Home'
         },
         {
             id: 38,
