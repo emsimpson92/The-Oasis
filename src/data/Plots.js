@@ -156,7 +156,7 @@ export const Plots = [
         },
         {
             id: 37,
-            description: 'Dogebones\' Home'
+            description: 'The Loaded Die'
         },
         {
             id: 38,
