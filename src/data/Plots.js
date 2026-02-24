@@ -190,7 +190,7 @@ export const Plots = [
         },
         {
             id: 45,
-            description: 'Elfyr\'s Home'
+            description: 'Double Tap Lodge'
         },
         {
             id: 46,
