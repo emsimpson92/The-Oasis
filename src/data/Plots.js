@@ -68,7 +68,7 @@ export const Plots = [
         },
         {
             id: 16,
-            description: 'Available'
+            description: 'The Golden Serpent'
         },
         {
             id: 17,
