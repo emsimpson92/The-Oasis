@@ -30,7 +30,7 @@ export const Plots = [
         },
         {
             id: 7,
-            description: 'The Golden Sand'
+            description: 'Available'
         },
         {
             id: 8,
@@ -186,7 +186,7 @@ export const Plots = [
         },
         {
             id: 44,
-            description: 'Spelle\'s Home'
+            description: 'Available'
         },
         {
             id: 45,
