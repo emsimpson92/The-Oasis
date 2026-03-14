@@ -118,7 +118,7 @@ export const Plots = [
         },
         {
             id: 28,
-            description: 'Sunlina\'s Home'
+            description: 'Available'
         },
         {
             id: 29,
@@ -174,7 +174,7 @@ export const Plots = [
         },
         {
             id: 41,
-            description: 'Tiverus\'s Home'
+            description: 'Available'
         },
         {
             id: 42,
