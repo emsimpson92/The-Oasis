@@ -206,7 +206,7 @@ export const Plots = [
         },
         {
             id: 49,
-            description: 'Sunlight\'s Serenity'
+            description: 'Sunlight\'s Serenity Clinic'
         }
     ],
     [
