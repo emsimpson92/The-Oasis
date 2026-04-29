@@ -30,7 +30,7 @@ export const Plots = [
         },
         {
             id: 7,
-            description: 'Available'
+            description: 'Mellidel\'s Home'
         },
         {
             id: 8,
