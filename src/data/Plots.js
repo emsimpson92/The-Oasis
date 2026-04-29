@@ -60,7 +60,7 @@ export const Plots = [
         },
         {
             id: 14,
-            description: 'Moraganna\'s Home'
+            description: 'Available'
         },
         {
             id: 15,
@@ -110,7 +110,7 @@ export const Plots = [
         },
         {
             id: 26,
-            description: 'Fooji\'s Home'
+            description: 'Available'
         },
         {
             id: 27,
