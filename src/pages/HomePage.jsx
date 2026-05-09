@@ -15,6 +15,7 @@ import LibraryLower from '../assets/RazorwindPines/LibraryLower.webp';
 import SlurringMurloc1 from '../assets/SlurringMurloc/SlurringMurloc1.webp';
 import CrookedKey from '../assets/CrookedKey/CrookedKey.webp';
 import DiscordIcon from '../assets/discord-icon.svg';
+import ArcanistBallroom from '../assets/ArcanistBallroom/Exterior_Profile.webp';
 import { useTheme as muiTheme } from '@mui/material';
 
 const Styles = (theme) => {
@@ -222,8 +223,8 @@ function HomePage() {
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={3}>
-                            <ActivityCard title={'The Slurring Murloc'} description={'Beachside tiki bar with an outdoor stage for live music'} link={'/slurringmurloc'}>
-                                <img src={SlurringMurloc1} alt={'The Slurring Murloc'} style={styles.activityImage} loading='lazy' />
+                            <ActivityCard title={'The Arcanist\'s Ballroom'} description={'Events center and theater floating just beyond the Four Sisters Falls'} link={'/arcanistballroom'}>
+                                <img src={ArcanistBallroom} alt={'The Arcanist\'s Ballroom'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                     </Grid>

@@ -2,49 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.oasismoonguard.com/</loc>
-    <lastmod>2026-02-12T06:32:18.257Z</lastmod>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.oasismoonguard.com/about</loc>
-    <lastmod>2026-02-12T06:32:18.257Z</lastmod>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.oasismoonguard.com/arcanistballroom</loc>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.oasismoonguard.com/contact</loc>
-    <lastmod>2026-02-12T06:32:18.257Z</lastmod>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.oasismoonguard.com/crookedkey</loc>
-    <lastmod>2026-02-12T06:32:18.257Z</lastmod>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.oasismoonguard.com/events/request</loc>
-    <lastmod>2026-02-12T06:32:18.257Z</lastmod>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.oasismoonguard.com/map</loc>
-    <lastmod>2026-02-12T06:32:18.257Z</lastmod>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.oasismoonguard.com/razorwindpines</loc>
-    <lastmod>2026-02-12T06:32:18.257Z</lastmod>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.oasismoonguard.com/slurringmurloc</loc>
-    <lastmod>2026-02-12T06:32:18.257Z</lastmod>
+    <lastmod>2026-05-09T21:26:13.353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

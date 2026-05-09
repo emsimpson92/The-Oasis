@@ -8,16 +8,21 @@ import { useTheme } from '../hooks/useTheme';
 import '../styles/fonts.css';
 import { useTheme as muiTheme } from '@mui/material';
 import Header from '../components/Header';
-import Entry from '../assets/RazorwindPines/Entry.webp';
-import BanquetHall from '../assets/RazorwindPines/BanquetHall.webp';
-import KafaShop from '../assets/RazorwindPines/KafaShop.webp';
-import Kitchen1 from '../assets/RazorwindPines/Kitchen1.webp';
-import Kitchen2 from '../assets/RazorwindPines/Kitchen2.webp';
-import LibraryLower from '../assets/RazorwindPines/LibraryLower.webp';
-import LibraryUpper from '../assets/RazorwindPines/LibraryUpper.webp';
-import VioletLounge1 from '../assets/RazorwindPines/VioletLounge1.webp';
-import VioletLounge2 from '../assets/RazorwindPines/VioletLounge2.webp';
-import LodgeDeck from '../assets/RazorwindPines/LodgeDeck.webp';
+import Ballroom from '../assets/ArcanistBallroom/Ballroom.webp';
+import BarEntry from '../assets/ArcanistBallroom/Bar_Entry.webp';
+import BarLeft from '../assets/ArcanistBallroom/Bar_Left.webp';
+import BarRight from '../assets/ArcanistBallroom/Bar_Right.webp';
+import ExteriorEntry from '../assets/ArcanistBallroom/Exterior_Entry.webp';
+import ExteriorFront from '../assets/ArcanistBallroom/Exterior_Front.webp';
+import ExteriorProfile from '../assets/ArcanistBallroom/Exterior_Profile.webp';
+import GalleryWalkway from '../assets/ArcanistBallroom/Gallery_Walkway.webp';
+import GameRoom from '../assets/ArcanistBallroom/Game_Room.webp';
+import GrandStair from '../assets/ArcanistBallroom/Grand_Stair.webp';
+import Library from '../assets/ArcanistBallroom/Library.webp';
+import LibraryCorner from '../assets/ArcanistBallroom/Library_Corner.webp';
+import StoryCircleAndFlowerGarden from '../assets/ArcanistBallroom/Story_Circle_and_Flower_Garden.webp';
+import TheaterAudience from '../assets/ArcanistBallroom/Theater_Audience.webp';
+import TheaterStage from '../assets/ArcanistBallroom/Theater_Stage.webp';
 
 const Styles = (theme) => ({
     root: { 
@@ -145,7 +150,7 @@ const Styles = (theme) => ({
         }
 });
 
-function RazorwindPines() {
+function ArcanistBallroom() {
     const theme = useTheme();
     const mui = muiTheme();
     const styles = Styles({ ...mui, ...theme });
@@ -156,16 +161,21 @@ function RazorwindPines() {
     const [direction, setDirection] = useState('left');
     
     const features = [
-        { name: 'Foyer', image: Entry },
-        { name: 'Banquet Hall', image: BanquetHall },
-        { name: 'Kitchen', image: Kitchen1 },
-        { name: 'Kitchen', image: Kitchen2 },
-        { name: 'Libary (Lower)', image: LibraryLower },
-        { name: 'Library (Upper)', image: LibraryUpper },
-        { name: 'Kafa Shop', image: KafaShop },
-        { name: 'The Violet Lounge', image: VioletLounge1 },
-        { name: 'The Violet Lounge', image: VioletLounge2 },
-        { name: 'The Upper Deck', image: LodgeDeck },
+        { name: 'Ballroom', image: Ballroom },
+        { name: 'Bar Entry', image: BarEntry },
+        { name: 'Bar Left', image: BarLeft },
+        { name: 'Bar Right', image: BarRight },
+        { name: 'Exterior Entry', image: ExteriorEntry },
+        { name: 'Exterior Front', image: ExteriorFront },
+        { name: 'Exterior Profile', image: ExteriorProfile },
+        { name: 'Gallery Walkway', image: GalleryWalkway },
+        { name: 'Game Room', image: GameRoom },
+        { name: 'Grand Stair', image: GrandStair },
+        { name: 'Library', image: Library },
+        { name: 'Library Corner', image: LibraryCorner },
+        { name: 'Story Circle and Flower Garden', image: StoryCircleAndFlowerGarden },
+        { name: 'Theater Audience', image: TheaterAudience },
+        { name: 'Theater Stage', image: TheaterStage },
     ];
     
     const handlePrevious = () => {
@@ -191,7 +201,7 @@ function RazorwindPines() {
     useEffect(() => {
         const video = videoRef.current;
         if (!video) return;
-        const streamUrl = 'https://videodelivery.net/d1761536e334c27c8adde62fe7673480/manifest/video.m3u8';
+        const streamUrl = 'https://videodelivery.net/d37030e6e236e4fdec0e73dd73a47b3d/manifest/video.m3u8';
 
         if (Hls.isSupported()) {
             const hls = new Hls();
@@ -205,11 +215,11 @@ function RazorwindPines() {
     }, []);
 
     useMeta({
-        title: 'Razorwind Pines Lodge — The Oasis',
-        description: "Razorwind Pines Lodge is a cliffside retreat within The Oasis charter neighborhood on Moon Guard. Explore the lodge, Violet Lounge, and gallery.",
-        url: 'https://www.oasismoonguard.com/razorwindpines',
-        image: 'https://www.oasismoonguard.com/og/razorwindpines.svg',
-        canonical: 'https://www.oasismoonguard.com/razorwindpines'
+        title: 'Arcanist Ballroom — The Oasis',
+        description: "Arcanist Ballroom is a grand venue within The Oasis charter neighborhood on Moon Guard. Explore the ballroom, bar, library, and theater.",
+        url: 'https://www.oasismoonguard.com/arcanistballroom',
+        image: 'https://www.oasismoonguard.com/og/arcanistballroom.svg',
+        canonical: 'https://www.oasismoonguard.com/arcanistballroom'
     });
 
     return (
@@ -236,10 +246,10 @@ function RazorwindPines() {
                 />
                 <Box style={styles.splashContent} ref={contentRef}>
                     <Typography variant="h1" style={{ fontSize: '4rem', color: theme.colors.accent, fontFamily: 'Arsenica Trial Regular, serif' }}>
-                        Razorwind Pines Lodge
+                        The Arcanist's Ballroom
                     </Typography>
                     <Typography variant="h2" style={{ fontSize: '1.5rem', fontFamily: 'Cormorant Garamond, serif', color: theme.colors.primary, marginTop: theme.spacing.md }}>
-                        Home to the exclusive Violet Lounge
+                        "Your Party, Our Playground"
                     </Typography>
                     <Button variant="inline" size="large" onClick={handleExplore} sx={styles.exploreButton}>
                         About
@@ -254,18 +264,30 @@ function RazorwindPines() {
                         About
                     </Typography>
                     <Typography variant="subtitle1" style={{fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: theme.colors.text, fontSize: theme.typography.fontSize.large}}>
-                        Oasis #52
+                        Oasis #46
                     </Typography>
                     <Typography variant="body1" sx={styles.bodyText}>
-                        {'Razorwind Pines Lodge is a cozy retreat perched on the cliffs overlooking the Oasis. '}
-                        {'Known for its rustic charm and breathtaking views, the lodge offers a serene escape from the bustling activities of the Oasis. '}
-                        {'Guests can enjoy the tranquil atmosphere, explore nearby hiking trails, or simply relax by the fireplace with a warm drink. '}
-                        {'The lodge\'s unique location provides stunning sunsets and a peaceful ambiance, making it a favorite spot for those seeking solitude and natural beauty.'}                        
+                        {'Come and let us turn your special occasion into memories that last a lifetime. '}
+                        {'Here at the Arcanist\'s Ballroom, floating scenically over the Four Sisters Falls, your guests will feel like Silvermoon Royalty. '}
                     </Typography>
                     <br />
                     <Typography variant="body1" sx={styles.bodyText}>
-                        {'Razorwind Pines Lodge is also home to the renowned Violet Lounge, an exclusive members-only bar known for its intimate atmosphere. '}
-                        {'The lounge features a curated menu of rare vintages, making it a must-visit destination for connoisseurs and casual drinkers alike. '}                        
+                        {'Whether it\'s the wedding of the century, the Darkmoon Player\'s latest show, or your lunarly bookclub we have everything you need! '}
+                        {'Our unseen staff have been trained by only Azerother\'s finest, from Pandaren chefs and Silvermoon sommeliers to dwarven brewmasters and orcish pitmasters.'}                        
+                    </Typography>
+                    <br />
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Feel welcome to explore the tower\'s expansive interior! '}
+                        {'We boast a variety of settings including picturesque picnic spots, cozy library corners, and grand galleries!'}                        
+                    </Typography>
+                    <br />
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'The tower also serves as home to our groundskeeper, retired rootwarden Muc, and your host and primary contact for event scheduling, Archmage Tom. '}
+                        {'Please be courteous, respectful of enchantment warning labels, and close all portals behind you!'}                        
+                    </Typography>
+                    <br />
+                    <Typography variant="body1" sx={styles.bodyText}>
+                        {'Thank you, and welcome to The Arcanist Ballroom! Don\'t forget to sign the guest book!'}
                     </Typography>
                     <Typography variant="h3" style={{ margin: `${theme.spacing.md} 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
                         Gallery
@@ -306,4 +328,4 @@ function RazorwindPines() {
     );
 }
 
-export default RazorwindPines;
+export default ArcanistBallroom;
