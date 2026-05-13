@@ -26,7 +26,7 @@ export const Plots = [
         },
         {
             id: 6,
-            description: 'Available'
+            description: 'Ymathill\'s Home'
         },
         {
             id: 7,
