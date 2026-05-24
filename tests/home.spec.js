@@ -28,3 +28,18 @@ test('explore button scrolls to activities section', async ({ page }) => {
   const venuesHeader = page.locator('text=Our Venues');
   await expect(venuesHeader).toBeVisible();
 });
+
+test('chronicles section displays black grimoire card and navigates', async ({ page }) => {
+  await page.goto('/');
+
+  const chroniclesHeader = page.locator('text=Chronicles');
+  await expect(chroniclesHeader).toBeVisible();
+
+  const cardTitle = page.locator('text=The Black Grimoire');
+  await expect(cardTitle).toBeVisible();
+
+  await cardTitle.click();
+
+  await expect(page).toHaveURL(/\/chronicles\/theblackgrimoire$/);
+  await expect(page.getByRole('heading', { name: 'The Black Grimoire' })).toBeVisible();
+});
