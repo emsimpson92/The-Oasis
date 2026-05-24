@@ -5,7 +5,7 @@ import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
 import '../styles/fonts.css';
 import Gorukh from '../assets/Gorukh.webp';
-import Zadwick from '../assets/Zadwick.webp';
+import Zibwick from '../assets/Zibwick.webp';
 import Oasis from '../assets/OasisHome.webp';
 import { useTheme as muiTheme } from '@mui/material';
 
@@ -126,12 +126,12 @@ function AboutPage() {
                     <Box sx={{...styles.body, justifyContent: 'flex-start'}}>
                         <Box sx={styles.imageContainer}>
                             <figure style={{margin: '0px'}}>
-                                <img src={Zadwick} alt="Zadwick" style={styles.portrait} loading='lazy' />
-                                <figcaption style={styles.caption}>{'Zadwick - Oasis Community Manager'}</figcaption>
+                                <img src={Zibwick} alt="Zibwick" style={styles.portrait} loading='lazy' />
+                                <figcaption style={styles.caption}><span style={{ textDecoration: 'line-through' }}>{'Zadwick'}</span>{' Zibwick - Oasis Community Manager'}</figcaption>
                             </figure>
                         </Box>
                         <Typography variant="body1" sx={styles.bodyText}>
-                            {'I\'m Zadwick, the Oasis community manager. I handle general logistics such as reviewing membership applications, discord organization/moderation, '}
+                            {'I\'m '}<span style={{ textDecoration: 'line-through' }}>{'Zadwick'}</span>{' Zibwick, the Oasis community manager. I handle general logistics such as reviewing membership applications, discord organization/moderation, '}
                             {'and website maintenance for the Oasis. It is my mission to ensure that everyone who enters the Oasis is treated respectfully and has a good time. '}
                             {'If you have questions or are curious about us, feel free to reach out to me on discord (or you can use our general inquiries page) and I will be happy to assist you!'}
                         </Typography>

@@ -14,6 +14,7 @@ import OasisHomeImg from '../assets/OasisHome.webp';
 import LibraryLower from '../assets/RazorwindPines/LibraryLower.webp';
 import SlurringMurloc1 from '../assets/SlurringMurloc/SlurringMurloc1.webp';
 import CrookedKey from '../assets/CrookedKey/CrookedKey.webp';
+import BlackGrimoire from '../assets/Chronicles/BlackGrimoire.webp';
 import DiscordIcon from '../assets/discord-icon.svg';
 import ArcanistBallroom from '../assets/ArcanistBallroom/Exterior_Profile.webp';
 import { useTheme as muiTheme } from '@mui/material';
@@ -225,6 +226,20 @@ function HomePage() {
                         <Grid item xs={12} sm={6} md={4} key={3}>
                             <ActivityCard title={'The Arcanist\'s Ballroom'} description={'Events center and theater floating just beyond the Four Sisters Falls'} link={'/arcanistballroom'}>
                                 <img src={ArcanistBallroom} alt={'The Arcanist\'s Ballroom'} style={styles.activityImage} loading='lazy' />
+                            </ActivityCard>
+                        </Grid>
+                    </Grid>
+                </Container>
+            </Box>
+            <Box component="section" sx={styles.activitiesSection}>
+                <Typography variant="h2" style={styles.paradiseHeader}>
+                    Chronicles
+                </Typography>
+                <Container maxWidth="xl">
+                    <Grid container spacing={3} style={{display: 'flex', justifyContent: 'center'}}>
+                        <Grid item xs={12} sm={6} md={4} key={4}>
+                            <ActivityCard title={'The Black Grimoire'} description={'Pages of a mysterious journal have been found scattered across The Oasis'} link={'/chronicles/theblackgrimoire'}>
+                                <img src={BlackGrimoire} alt={'The Black Grimoire'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                     </Grid>

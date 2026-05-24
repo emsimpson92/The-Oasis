@@ -9,6 +9,7 @@ const MapPage = lazy(() => import('./pages/MapPage'));
 const RazorwindPines = lazy(() => import('./pages/RazorwindPines'));
 const ArcanistBallroom = lazy(() => import('./pages/ArcanistBallroom'));
 const CrookedKey = lazy(() => import('./pages/CrookedKey'));
+const TheBlackGrimoire = lazy(() => import('./pages/Chronicles/TheBlackGrimoire'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -36,6 +37,7 @@ function App() {
             <Route path="/razorwindpines" element={<Suspense fallback={background}><RazorwindPines /></Suspense>} />
             <Route path="/slurringmurloc" element={<Suspense fallback={background}><ComingSoon /></Suspense>} />
             <Route path="/about" element={<Suspense fallback={background}><AboutPage /></Suspense>} />
+            <Route path="/chronicles/theblackgrimoire" element={<Suspense fallback={background}><TheBlackGrimoire /></Suspense>} />
             <Route path="/events/request" element={<Suspense fallback={background}><EventRequest /></Suspense>} />
             <Route path="/contact" element={<Suspense fallback={background}><ContactPage /></Suspense>} />
             <Route path="*" element={<Suspense fallback={background}><NotFound /></Suspense>} />
