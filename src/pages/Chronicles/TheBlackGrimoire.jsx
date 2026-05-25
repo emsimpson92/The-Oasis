@@ -136,7 +136,7 @@ function TheBlackGrimoire() {
 		<Box style={styles.root}>
 			<Header />
 
-		<Box sx={styles.hero} aria-hidden>
+		<Box sx={styles.hero}>
 			<Box
 				component="img"
 				src={BlackGrimoireImg}
