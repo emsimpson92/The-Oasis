@@ -60,7 +60,7 @@ export const Plots = [
         },
         {
             id: 14,
-            description: 'Available'
+            description: 'Zanefer\'s Home'
         },
         {
             id: 15,
@@ -170,7 +170,7 @@ export const Plots = [
     [
         {
             id: 40,
-            description: 'Available'
+            description: 'Elethyr\'s Home'
         },
         {
             id: 41,
