@@ -6,7 +6,7 @@ export const Plots = [
         },
         {
             id: 1,
-            description: 'Manas\' Home'
+            description: 'Available'
         },
         {
             id: 2,
@@ -34,7 +34,7 @@ export const Plots = [
         },
         {
             id: 8,
-            description: 'Jafka\'s Home'
+            description: 'Available'
         },
         {
             id: 9,
@@ -52,7 +52,7 @@ export const Plots = [
         },
         {
             id: 12,
-            description: 'Ogin\'s Home'
+            description: 'Available'
         },
         {
             id: 13,
@@ -132,7 +132,7 @@ export const Plots = [
         },
         {
             id: 31,
-            description: 'Azteraq\'s Home'
+            description: 'Available'
         },
         {
             id: 32,
@@ -140,7 +140,7 @@ export const Plots = [
         },
         {
             id: 33,
-            description: 'Concordia\'s Home'
+            description: 'Available'
         },
         {
             id: 34,
@@ -228,7 +228,7 @@ export const Plots = [
         },
         {
             id: 54,
-            description: 'Madameshrek\'s Home'
+            description: 'Available'
         },
         {
             id: 55,
