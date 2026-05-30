@@ -218,7 +218,7 @@ function CrookedKey() {
                         About
                     </Typography>
                     <Typography variant="subtitle1" style={{fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: theme.colors.text, fontSize: theme.typography.fontSize.large}}>
-                        Oasis #43
+                        Oasis #31
                     </Typography>
                     <Typography variant="body1" sx={styles.bodyText}>
                         {'Nestled beneath warm lantern light and rough bamboo beams, The Crooked Key welcomes travelers, performers, and connoisseurs alike. '}

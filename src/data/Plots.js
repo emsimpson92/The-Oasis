@@ -132,7 +132,7 @@ export const Plots = [
         },
         {
             id: 31,
-            description: 'Available'
+            description: 'The Crooked Key'
         },
         {
             id: 32,
@@ -182,7 +182,7 @@ export const Plots = [
         },
         {
             id: 43,
-            description: 'The Crooked Key'
+            description: 'Available'
         },
         {
             id: 44,
