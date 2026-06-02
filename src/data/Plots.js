@@ -178,7 +178,7 @@ export const Plots = [
         },
         {
             id: 42,
-            description: 'Corfear\'s Home'
+            description: 'Justyvee\'s Home'
         },
         {
             id: 43,
