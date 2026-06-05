@@ -182,7 +182,7 @@ export const Plots = [
         },
         {
             id: 43,
-            description: 'Available'
+            description: 'Prook\'s Home'
         },
         {
             id: 44,
