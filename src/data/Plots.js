@@ -160,7 +160,7 @@ export const Plots = [
         },
         {
             id: 38,
-            description: 'Available'
+            description: 'Vamiko\'s Home'
         },
         {
             id: 39,
