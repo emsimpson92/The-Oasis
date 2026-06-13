@@ -34,7 +34,7 @@ export const Plots = [
         },
         {
             id: 8,
-            description: 'Available'
+            description: 'Grimpath\'s Home'
         },
         {
             id: 9,
@@ -56,7 +56,7 @@ export const Plots = [
         },
         {
             id: 13,
-            description: 'Available'
+            description: 'Setigros\' Home'
         },
         {
             id: 14,
@@ -72,7 +72,7 @@ export const Plots = [
         },
         {
             id: 17,
-            description: 'Available'
+            description: 'Reikilotus\' Home'
         },
         {
             id: 18,
@@ -86,7 +86,7 @@ export const Plots = [
     [
         {
             id: 20,
-            description: 'Available'
+            description: 'Savadra\'s Home'
         },
         {
             id: 21,
@@ -148,7 +148,7 @@ export const Plots = [
         },
         {
             id: 35,
-            description: 'Arkae\'s Home'
+            description: 'The Velvet Lily'
         },
         {
             id: 36,
@@ -164,7 +164,7 @@ export const Plots = [
         },
         {
             id: 39,
-            description: 'Huranok\'s Home'
+            description: 'Artivee\'s Home'
         }
     ],
     [
@@ -178,7 +178,7 @@ export const Plots = [
         },
         {
             id: 42,
-            description: 'Justyvee\'s Home'
+            description: 'Available'
         },
         {
             id: 43,
@@ -228,7 +228,7 @@ export const Plots = [
         },
         {
             id: 54,
-            description: 'Available'
+            description: 'Thesyra\'s Home'
         },
         {
             id: 55,
