@@ -174,7 +174,7 @@ export const Plots = [
         },
         {
             id: 41,
-            description: 'Available'
+            description: 'Aeonastrasz\'s Home'
         },
         {
             id: 42,
