@@ -174,11 +174,11 @@ export const Plots = [
         },
         {
             id: 41,
-            description: 'Aeonastrasz\'s Home'
+            description: 'Available'
         },
         {
             id: 42,
-            description: 'Available'
+            description: 'Aeonastrasz\'s Home'
         },
         {
             id: 43,
@@ -212,7 +212,7 @@ export const Plots = [
     [
         {
             id: 50,
-            description: 'Syodine\'s Home'
+            description: 'Available'
         },
         {
             id: 51,
