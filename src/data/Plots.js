@@ -72,7 +72,7 @@ export const Plots = [
         },
         {
             id: 17,
-            description: 'Reikilotus\' Home'
+            description: 'Karuma Sedei'
         },
         {
             id: 18,
@@ -174,7 +174,7 @@ export const Plots = [
         },
         {
             id: 41,
-            description: 'Available'
+            description: 'Prizmh\'s Home'
         },
         {
             id: 42,
