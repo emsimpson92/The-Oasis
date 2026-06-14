@@ -26,7 +26,7 @@ export const Plots = [
         },
         {
             id: 6,
-            description: 'Ymathill\'s Home'
+            description: 'Zyklos\' Home'
         },
         {
             id: 7,
@@ -122,7 +122,7 @@ export const Plots = [
         },
         {
             id: 29,
-            description: 'Available'
+            description: 'Pokuana\'s Home'
         }
     ],
     [
