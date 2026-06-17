@@ -6,7 +6,7 @@ export const Plots = [
         },
         {
             id: 1,
-            description: 'Available'
+            description: 'Merabel\'s Home'
         },
         {
             id: 2,
