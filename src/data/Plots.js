@@ -128,7 +128,7 @@ export const Plots = [
     [
         {
             id: 30,
-            description: 'Gorith\'s Home'
+            description: 'The Arcspindle Enclave'
         },
         {
             id: 31,
