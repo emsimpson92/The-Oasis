@@ -28,16 +28,3 @@ test('about button scrolls to about section', async ({ page }) => {
   const aboutHeader = page.locator('h3:has-text("About")');
   await expect(aboutHeader).toBeVisible();
 });
-
-const getCrookedKeyVisibleCarouselSrc = async (page) => {
-  return page.evaluate(() => {
-    const headings = Array.from(document.querySelectorAll('h3'));
-    const galleryHeading = headings.find((heading) => heading.textContent?.trim() === 'Gallery');
-    if (!galleryHeading) return '';
-    const carousel = galleryHeading.nextElementSibling;
-    if (!carousel) return '';
-    const images = Array.from(carousel.querySelectorAll('img[alt]'));
-    const visible = images.find((img) => img.parentElement && window.getComputedStyle(img.parentElement).opacity === '1');
-    return visible?.src || '';
-  });
-};
