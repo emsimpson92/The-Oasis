@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "playwright:install": "playwright install --with-deps",
+    "playwright:install": "playwright install",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
     "prebuild": "node ./scripts/generate-sitemap.js",

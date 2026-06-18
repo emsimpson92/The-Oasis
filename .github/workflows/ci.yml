@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright
-        uses: playwright-community/playwright-github-action@v1
+        run: npm run playwright:install
 
       - name: Run linter
         run: npm run lint
