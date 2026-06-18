@@ -48,8 +48,10 @@ const Styles = (theme) => {
         },
         image: {
             width: '350px',
+            aspectRatio: '16/9',
             borderRadius: '10px',
             boxShadow: `0 4px 8px rgba(0, 0, 0, 0.2)`,
+            display: 'block'
         },
         imageBox: {
             margin: `0 ${theme.spacing.md}`,
@@ -60,6 +62,7 @@ const Styles = (theme) => {
         portrait: {
             width: '350px',
             marginRight: theme.spacing.md,
+            aspectRatio: '3/4',
             borderRadius: '10px',
             boxShadow: `0 4px 8px rgba(0, 0, 0, 0.2)`
         },
@@ -107,7 +110,7 @@ function AboutPage() {
                     <hr style={styles.divider} />
                     <Box sx={styles.body}>
                         <Typography variant="body1" sx={styles.bodyText}>
-                            {'The Oasis is a cross-faction, cross-server charter neighborhood originating from Moon Guard. We are a mature, LGBTQ+ friendly group of adults (18+) and '}
+                            {'The Oasis is a cross-faction, cross-server charter neighborhood originating from Moon Guard. We are a mature, LGBTQ+ friendly group of adults (21+) and '}
                             {'our goal is to provide a thriving community with a heavy focus on RP, partnering with other RP guilds and individuals across World of Warcraft. '}
                             {'The Oasis puts an emphasis on personal choice, where your experience is what you make of it. All of our members are free to host events, run shops, or simply roleplay in the neighborhood. '}
                             {'Many of our plots in the Oasis serve a communal purpose. As you explore the Oasis you may find yourself at a cozy bakery, a luxurious hot springs resort, or a dimly lit tavern. '}
@@ -115,7 +118,7 @@ function AboutPage() {
                         </Typography>
                         <Box sx={styles.imageContainer}>
                             <figure style={{margin: '0px'}}>
-                                <Box sx={styles.imageBox}><img src={Oasis} style={styles.image} alt="Oasis" loading='lazy' /></Box>
+                                <Box sx={styles.imageBox}><img src={Oasis} style={styles.image} alt="Oasis" loading='lazy' width={350} height={200} /></Box>
                                 <figcaption style={styles.caption}>{'One of our many stunning views!'}</figcaption>
                             </figure>
                         </Box>
@@ -127,7 +130,7 @@ function AboutPage() {
                     <Box sx={{...styles.body, justifyContent: 'flex-start'}}>
                         <Box sx={styles.imageContainer}>
                             <figure style={{margin: '0px'}}>
-                                <img src={Zibwick} alt="Zibwick" style={styles.portrait} loading='lazy' />
+                                <img src={Zibwick} alt="Zibwick" style={styles.portrait} loading='lazy' width={350} height={200} />
                                 <figcaption style={styles.caption}><span style={{ textDecoration: 'line-through' }}>{'Zadwick'}</span>{' Zibwick - Oasis Community Manager'}</figcaption>
                             </figure>
                         </Box>
@@ -140,7 +143,7 @@ function AboutPage() {
                     <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
                         <Box sx={styles.imageContainer}>
                             <figure style={{margin: '0px'}}>
-                                <img src={Astarthea} alt="Astarthea" style={styles.portrait} loading='lazy' />
+                                <img src={Astarthea} alt="Astarthea" style={styles.portrait} loading='lazy' width={350} height={200} />
                                 <figcaption style={styles.caption}>{'Astarthea - Matron of the Velvet Lily'}</figcaption>
                             </figure>
                         </Box>
@@ -151,7 +154,7 @@ function AboutPage() {
                     <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
                         <Box sx={styles.imageContainer}>
                             <figure style={{margin: '0px'}}>
-                                <img src={Gorukh} alt="Gorukh" style={styles.portrait} loading='lazy' />
+                                <img src={Gorukh} alt="Gorukh" style={styles.portrait} loading='lazy' width={350} height={200} />
                                 <figcaption style={styles.caption}>{'Gorukh - Razorwind Pines Caretaker'}</figcaption>
                             </figure>
                         </Box>
