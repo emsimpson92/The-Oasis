@@ -28,3 +28,50 @@ test('about button scrolls to about section', async ({ page }) => {
   const aboutHeader = page.locator('h3:has-text("About")');
   await expect(aboutHeader).toBeVisible();
 });
+
+const getCrookedKeyVisibleCarouselSrc = async (page) => {
+  return page.evaluate(() => {
+    const headings = Array.from(document.querySelectorAll('h3'));
+    const galleryHeading = headings.find((heading) => heading.textContent?.trim() === 'Gallery');
+    if (!galleryHeading) return '';
+    const carousel = galleryHeading.nextElementSibling;
+    if (!carousel) return '';
+    const images = Array.from(carousel.querySelectorAll('img[alt]'));
+    const visible = images.find((img) => img.parentElement && window.getComputedStyle(img.parentElement).opacity === '1');
+    return visible?.src || '';
+  });
+};
+
+test('carousel next button changes slide', async ({ page }) => {
+  await page.goto('/crookedkey');
+  await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(500);
+
+  const initialSlideSrc = await getCrookedKeyVisibleCarouselSrc(page);
+  const nextButton = page.locator('button[aria-label="next"]');
+  await nextButton.click();
+  await page.waitForTimeout(500);
+
+  const newSlideSrc = await getCrookedKeyVisibleCarouselSrc(page);
+  expect(newSlideSrc).not.toBe(initialSlideSrc);
+});
+
+test('carousel previous button changes slide', async ({ page }) => {
+  await page.goto('/crookedkey');
+  await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(500);
+
+  const nextButton = page.locator('button[aria-label="next"]');
+  await nextButton.click();
+  await page.waitForTimeout(300);
+  await nextButton.click();
+  await page.waitForTimeout(300);
+
+  const currentSlideSrc = await getCrookedKeyVisibleCarouselSrc(page);
+  const prevButton = page.locator('button[aria-label="previous"]');
+  await prevButton.click();
+  await page.waitForTimeout(500);
+
+  const newSlideSrc = await getCrookedKeyVisibleCarouselSrc(page);
+  expect(newSlideSrc).not.toBe(currentSlideSrc);
+});

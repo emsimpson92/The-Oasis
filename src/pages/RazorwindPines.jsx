@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import Hls from 'hls.js';
 import useMeta from '../hooks/useMeta';
-import { Box, Button, Container, IconButton, Slide, Typography } from '@mui/material';
+import { Box, Button, Container, IconButton, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useTheme } from '../hooks/useTheme';
@@ -11,13 +10,16 @@ import Header from '../components/Header';
 import Entry from '../assets/RazorwindPines/Entry.webp';
 import BanquetHall from '../assets/RazorwindPines/BanquetHall.webp';
 import KafaShop from '../assets/RazorwindPines/KafaShop.webp';
-import Kitchen1 from '../assets/RazorwindPines/Kitchen1.webp';
-import Kitchen2 from '../assets/RazorwindPines/Kitchen2.webp';
+import Kitchen from '../assets/RazorwindPines/Kitchen.webp';
 import LibraryLower from '../assets/RazorwindPines/LibraryLower.webp';
+import LibraryMiddle from '../assets/RazorwindPines/LibraryMiddle.webp';
 import LibraryUpper from '../assets/RazorwindPines/LibraryUpper.webp';
-import VioletLounge1 from '../assets/RazorwindPines/VioletLounge1.webp';
-import VioletLounge2 from '../assets/RazorwindPines/VioletLounge2.webp';
+import Lounge1 from '../assets/RazorwindPines/Lounge1.webp';
+import Lounge2 from '../assets/RazorwindPines/Lounge2.webp';
+import Lounge3 from '../assets/RazorwindPines/Lounge3.webp';
 import LodgeDeck from '../assets/RazorwindPines/LodgeDeck.webp';
+import OuterTerrace from '../assets/RazorwindPines/OuterTerrace.webp';
+import LodgeHome from '../assets/RazorwindPines/LodgeHome.webp';
 
 const Styles = (theme) => ({
     root: { 
@@ -119,7 +121,6 @@ const Styles = (theme) => ({
             alignItems: 'center',
             justifyContent: 'center',
             gap: theme.spacing.lg,
-            marginTop: theme.spacing.xl,
             [theme.breakpoints.down('sm')]: {
                 gap: `0px`
             },
@@ -151,30 +152,28 @@ function RazorwindPines() {
     const styles = Styles({ ...mui, ...theme });
     const contentRef = useRef(null);
     const aboutRef = useRef(null);
-    const videoRef = useRef(null);
     const [carouselIndex, setCarouselIndex] = useState(0);
-    const [direction, setDirection] = useState('left');
     
     const features = [
         { name: 'Foyer', image: Entry },
         { name: 'Banquet Hall', image: BanquetHall },
-        { name: 'Kitchen', image: Kitchen1 },
-        { name: 'Kitchen', image: Kitchen2 },
-        { name: 'Libary (Lower)', image: LibraryLower },
-        { name: 'Library (Upper)', image: LibraryUpper },
+        { name: 'Kitchen', image: Kitchen },
         { name: 'Kafa Shop', image: KafaShop },
-        { name: 'The Violet Lounge', image: VioletLounge1 },
-        { name: 'The Violet Lounge', image: VioletLounge2 },
+        { name: 'Libary (Lower)', image: LibraryLower },
+        { name: 'Libary (Middle)', image: LibraryMiddle },
+        { name: 'Library (Upper)', image: LibraryUpper },
+        { name: 'The Violet Lounge', image: Lounge1 },
+        { name: 'The Violet Lounge', image: Lounge2 },
+        { name: 'The Violet Lounge', image: Lounge3 },
         { name: 'The Upper Deck', image: LodgeDeck },
+        { name: 'Outer Terrace', image: OuterTerrace },
     ];
     
     const handlePrevious = () => {
-        setDirection('right');
         setCarouselIndex((prev) => (prev === 0 ? features.length - 1 : prev - 1));
     };
     
     const handleNext = () => {
-        setDirection('left');
         setCarouselIndex((prev) => (prev === features.length - 1 ? 0 : prev + 1));
     };
     
@@ -185,23 +184,6 @@ function RazorwindPines() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
-
-    // Attach HLS stream to the video element so we can control styling (object-fit: cover)
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-        const streamUrl = 'https://videodelivery.net/d1761536e334c27c8adde62fe7673480/manifest/video.m3u8';
-
-        if (Hls.isSupported()) {
-            const hls = new Hls();
-            hls.loadSource(streamUrl);
-            hls.attachMedia(video);
-            return () => hls.destroy();
-        } else {
-            // Native HLS (Safari)
-            video.src = streamUrl;
-        }
     }, []);
 
     useMeta({
@@ -216,12 +198,9 @@ function RazorwindPines() {
         <Box style={styles.root}>
             <Box style={styles.videoWrapper}>
                 <Header transparent />
-                <video
-                    ref={videoRef}
-                    playsInline
-                    autoPlay
-                    muted
-                    loop
+                <img
+                    src={LodgeHome}
+                    alt="Razorwind Pines Lodge"
                     aria-hidden="true"
                     style={{
                         border: 'none',
@@ -234,6 +213,7 @@ function RazorwindPines() {
                         objectFit: 'cover'
                     }}
                 />
+                <Box style={styles.overlay} />
                 <Box style={styles.splashContent} ref={contentRef}>
                     <Typography variant="h1" style={{ fontSize: '4rem', color: theme.colors.accent, fontFamily: 'Arsenica Trial Regular, serif' }}>
                         Razorwind Pines Lodge
@@ -248,7 +228,7 @@ function RazorwindPines() {
                 <div style={styles.gradientDivider} />
             </Box>
 
-            <Box component="section" ref={aboutRef} sx={{ padding: `${theme.spacing.sm} ${theme.spacing.xl} ${theme.spacing.xl}`, backgroundColor: theme.colors.background }}>
+            <Box component="section" ref={aboutRef} sx={{ padding: `${theme.spacing.sm} ${theme.spacing.sm} ${theme.spacing.xl}`, backgroundColor: theme.colors.background }}>
                 <Container maxWidth="xl">
                     <Typography variant="h3" style={{ margin: `${theme.spacing.md} 0px 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
                         About
@@ -267,7 +247,7 @@ function RazorwindPines() {
                         {'Razorwind Pines Lodge is also home to the renowned Violet Lounge, an exclusive members-only bar known for its intimate atmosphere. '}
                         {'The lounge features a curated menu of rare vintages, making it a must-visit destination for connoisseurs and casual drinkers alike. '}                        
                     </Typography>
-                    <Typography variant="h3" style={{ margin: `${theme.spacing.md} 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
+                    <Typography variant="h3" style={{ textAlign: 'center', margin: `${theme.spacing.md} 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
                         Gallery
                     </Typography>
                     <Box sx={styles.carouselContainer}>
@@ -277,19 +257,21 @@ function RazorwindPines() {
                         <Box sx={styles.carouselContent}>
                         {
                             features.map((item, index) => (
-                                <Slide 
+                                <Box
                                     key={index}
-                                    direction={direction} 
-                                    in={carouselIndex === index} 
-                                    mountOnEnter 
-                                    unmountOnExit
-                                    timeout={{ enter: 300, exit: 300 }}
-                                    style={{ position: 'absolute', width: '100%', height: '100%' }}
+                                    sx={{
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: '100%',
+                                        opacity: carouselIndex === index ? 1 : 0,
+                                        transition: 'opacity 0.5s ease-in-out',
+                                        zIndex: carouselIndex === index ? 2 : 1,
+                                        display: 'flex',
+                                        justifyContent: 'center'
+                                    }}
                                 >
-                                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100%', transition: 'opacity 0.6s ease-in-out' }}>
-                                        <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px', transition: 'opacity 0.6s ease-in-out' }} loading='lazy' />
-                                    </div>
-                                </Slide>
+                                    <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }} loading='lazy' />
+                                </Box>
                             ))
                         }
                         </Box>

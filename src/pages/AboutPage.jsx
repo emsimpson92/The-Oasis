@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import '../styles/fonts.css';
 import Gorukh from '../assets/Gorukh.webp';
 import Zibwick from '../assets/Zibwick.webp';
+import Astarthea from '../assets/Astarthea.webp';
 import Oasis from '../assets/OasisHome.webp';
 import { useTheme as muiTheme } from '@mui/material';
 
@@ -134,6 +135,17 @@ function AboutPage() {
                             {'I\'m '}<span style={{ textDecoration: 'line-through' }}>{'Zadwick'}</span>{' Zibwick, the Oasis community manager. I handle general logistics such as reviewing membership applications, discord organization/moderation, '}
                             {'and website maintenance for the Oasis. It is my mission to ensure that everyone who enters the Oasis is treated respectfully and has a good time. '}
                             {'If you have questions or are curious about us, feel free to reach out to me on discord (or you can use our general inquiries page) and I will be happy to assist you!'}
+                        </Typography>
+                    </Box>
+                    <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>
+                        <Box sx={styles.imageContainer}>
+                            <figure style={{margin: '0px'}}>
+                                <img src={Astarthea} alt="Astarthea" style={styles.portrait} loading='lazy' />
+                                <figcaption style={styles.caption}>{'Astarthea - Matron of the Velvet Lily'}</figcaption>
+                            </figure>
+                        </Box>
+                        <Typography variant="body1" sx={styles.bodyText}>
+                            {'Astarthea is the owner of the Velvet Lily, a prestigious establishment that is more than just a building... It is a place that many have called home. Astarthea and her "Lilies" have joined forces with the Oasis to cultivate a unique experience for all residents and visitors.'}
                         </Typography>
                     </Box>
                     <Box sx={{...styles.body, justifyContent: 'flex-start', marginTop: theme.spacing.xl}}>

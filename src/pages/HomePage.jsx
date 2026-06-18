@@ -11,12 +11,13 @@ import { useTheme } from '../hooks/useTheme';
 import ActivityCard from '../components/ActivityCard';
 import '../styles/fonts.css';
 import OasisHomeImg from '../assets/OasisHome.webp';
-import LibraryLower from '../assets/RazorwindPines/LibraryLower.webp';
-import SlurringMurloc1 from '../assets/SlurringMurloc/SlurringMurloc1.webp';
+import LodgeHome from '../assets/RazorwindPines/BanquetHall.webp';
 import CrookedKey from '../assets/CrookedKey/CrookedKey.webp';
-import BlackGrimoire from '../assets/Chronicles/BlackGrimoire.webp';
+import BlackGrimoire from '../assets/Chronicles/BlackGrimoire/BlackGrimoire.webp';
+import BuriedGod from '../assets/Chronicles/BuriedGod/BuriedGod.webp';
 import DiscordIcon from '../assets/discord-icon.svg';
-import ArcanistBallroom from '../assets/ArcanistBallroom/Exterior_Profile.webp';
+import ArcanistBallroom from '../assets/ArcanistBallroom/Bar_Entry.webp';
+import KarumaSedei from '../assets/KarumaSedei/MeditationRoom2.webp';
 import { useTheme as muiTheme } from '@mui/material';
 
 const Styles = (theme) => {
@@ -215,7 +216,7 @@ function HomePage() {
                     <Grid container spacing={3} style={{display: 'flex', justifyContent: 'center'}}>
                         <Grid item xs={12} sm={6} md={4} key={1}>
                             <ActivityCard title={'Razorwind Pines Lodge'} description={'Cliffside retreat nestled on the outskirts of the Oasis'} link={'/razorwindpines'}>
-                                <img src={LibraryLower} alt={'Razorwind Pines'} style={styles.activityImage} loading='lazy' />
+                                <img src={LodgeHome} alt={'Razorwind Pines'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} key={2}>
@@ -226,6 +227,11 @@ function HomePage() {
                         <Grid item xs={12} sm={6} md={4} key={3}>
                             <ActivityCard title={'The Arcanist\'s Ballroom'} description={'Events center and theater floating just beyond the Four Sisters Falls'} link={'/arcanistballroom'}>
                                 <img src={ArcanistBallroom} alt={'The Arcanist\'s Ballroom'} style={styles.activityImage} loading='lazy' />
+                            </ActivityCard>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} key={4}>
+                            <ActivityCard title={'Karuma Sedei'} description={'A healing sanctuary within the southern reaches of Runetotem\'s Bounty'} link={'/karumasedei'}>
+                                <img src={KarumaSedei} alt={'Karuma Sedei'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                     </Grid>
@@ -240,6 +246,11 @@ function HomePage() {
                         <Grid item xs={12} sm={6} md={4} key={4}>
                             <ActivityCard title={'The Black Grimoire'} description={'Pages of a mysterious journal have been found scattered across The Oasis'} link={'/chronicles/theblackgrimoire'}>
                                 <img src={BlackGrimoire} alt={'The Black Grimoire'} style={styles.activityImage} loading='lazy' />
+                            </ActivityCard>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} key={5}>
+                            <ActivityCard title={'The Buried God'} description={'An ancient deity slumbers beneath the sands of The Oasis'} link={'/chronicles/theburiedgod'}>
+                                <img src={BuriedGod} alt={'The Buried God'} style={styles.activityImage} loading='lazy' />
                             </ActivityCard>
                         </Grid>
                     </Grid>

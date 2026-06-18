@@ -114,10 +114,10 @@ function MapPage() {
                                 {
                                     col.map((plot) => (
                                         <div key={plot.id}>
-                                            <Typography key={plot.id} variant="body1" sx={styles.plotLabel}>
+                                            <Typography variant="body1" sx={styles.plotLabel}>
                                                 {`Plot ${plot.id}:`}
                                             </Typography>
-                                            <Typography key={plot.id} variant="body1" sx={{...styles.plotDescription, color: plot.description === 'Available' ? theme.colors.accent : theme.colors.text}}>
+                                            <Typography variant="body1" sx={{...styles.plotDescription, color: plot.description === 'Available' ? theme.colors.accent : theme.colors.text}}>
                                                 {plot.description}
                                             </Typography>
                                         </div>

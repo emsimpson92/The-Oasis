@@ -96,7 +96,6 @@ function Footer() {
                     <Typography sx={styles.sectionTitle}>Contact</Typography>
                     <hr style={styles.divider} />
                     <RouterLink to="/contact" style={styles.link}><Typography sx={styles.sectionButton}>General Inquiries</Typography></RouterLink>
-                    <RouterLink style={styles.link} to="/events/request"><Typography sx={styles.sectionButton}>Request an Event</Typography></RouterLink>
                     <Button variant="inline" onClick={() => window.open('https://discord.gg/AhsnAsSUNK', '_blank', 'noopener,noreferrer')} sx={styles.sectionButton}>Join the Community</Button>
                 </Box>
             </Box>

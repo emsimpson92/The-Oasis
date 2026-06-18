@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import Hls from 'hls.js';
 import useMeta from '../hooks/useMeta';
-import { Box, Button, Container, IconButton, Slide, Typography } from '@mui/material';
+import { Box, Button, Container, IconButton, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useTheme } from '../hooks/useTheme';
@@ -124,7 +123,6 @@ const Styles = (theme) => ({
             alignItems: 'center',
             justifyContent: 'center',
             gap: theme.spacing.lg,
-            marginTop: theme.spacing.xl,
             [theme.breakpoints.down('sm')]: {
                 gap: `0px`
             },
@@ -156,18 +154,15 @@ function ArcanistBallroom() {
     const styles = Styles({ ...mui, ...theme });
     const contentRef = useRef(null);
     const aboutRef = useRef(null);
-    const videoRef = useRef(null);
     const [carouselIndex, setCarouselIndex] = useState(0);
-    const [direction, setDirection] = useState('left');
     
     const features = [
+        { name: 'Exterior', image: ExteriorProfile },
+        { name: 'Exterior Front', image: ExteriorFront },
         { name: 'Ballroom', image: Ballroom },
         { name: 'Bar Entry', image: BarEntry },
         { name: 'Bar Left', image: BarLeft },
         { name: 'Bar Right', image: BarRight },
-        { name: 'Exterior Entry', image: ExteriorEntry },
-        { name: 'Exterior Front', image: ExteriorFront },
-        { name: 'Exterior Profile', image: ExteriorProfile },
         { name: 'Gallery Walkway', image: GalleryWalkway },
         { name: 'Game Room', image: GameRoom },
         { name: 'Grand Stair', image: GrandStair },
@@ -179,12 +174,10 @@ function ArcanistBallroom() {
     ];
     
     const handlePrevious = () => {
-        setDirection('right');
         setCarouselIndex((prev) => (prev === 0 ? features.length - 1 : prev - 1));
     };
     
     const handleNext = () => {
-        setDirection('left');
         setCarouselIndex((prev) => (prev === features.length - 1 ? 0 : prev + 1));
     };
     
@@ -197,22 +190,7 @@ function ArcanistBallroom() {
         window.scrollTo(0, 0);
     }, []);
 
-    // Attach HLS stream to the video element so we can control styling (object-fit: cover)
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-        const streamUrl = 'https://videodelivery.net/d37030e6e236e4fdec0e73dd73a47b3d/manifest/video.m3u8';
 
-        if (Hls.isSupported()) {
-            const hls = new Hls();
-            hls.loadSource(streamUrl);
-            hls.attachMedia(video);
-            return () => hls.destroy();
-        } else {
-            // Native HLS (Safari)
-            video.src = streamUrl;
-        }
-    }, []);
 
     useMeta({
         title: 'Arcanist Ballroom — The Oasis',
@@ -226,12 +204,9 @@ function ArcanistBallroom() {
         <Box style={styles.root}>
             <Box style={styles.videoWrapper}>
                 <Header transparent />
-                <video
-                    ref={videoRef}
-                    playsInline
-                    autoPlay
-                    muted
-                    loop
+                <img
+                    src={ExteriorEntry}
+                    alt="The Arcanist's Ballroom"
                     aria-hidden="true"
                     style={{
                         border: 'none',
@@ -244,6 +219,7 @@ function ArcanistBallroom() {
                         objectFit: 'cover'
                     }}
                 />
+                <Box style={styles.overlay} />
                 <Box style={styles.splashContent} ref={contentRef}>
                     <Typography variant="h1" style={{ fontSize: '4rem', color: theme.colors.accent, fontFamily: 'Arsenica Trial Regular, serif' }}>
                         The Arcanist's Ballroom
@@ -258,7 +234,7 @@ function ArcanistBallroom() {
                 <div style={styles.gradientDivider} />
             </Box>
 
-            <Box component="section" ref={aboutRef} sx={{ padding: `${theme.spacing.sm} ${theme.spacing.xl} ${theme.spacing.xl}`, backgroundColor: theme.colors.background }}>
+            <Box component="section" ref={aboutRef} sx={{ padding: `${theme.spacing.sm} ${theme.spacing.sm} ${theme.spacing.xl}`, backgroundColor: theme.colors.background }}>
                 <Container maxWidth="xl">
                     <Typography variant="h3" style={{ margin: `${theme.spacing.md} 0px 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
                         About
@@ -289,7 +265,7 @@ function ArcanistBallroom() {
                     <Typography variant="body1" sx={styles.bodyText}>
                         {'Thank you, and welcome to The Arcanist Ballroom! Don\'t forget to sign the guest book!'}
                     </Typography>
-                    <Typography variant="h3" style={{ margin: `${theme.spacing.md} 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
+                    <Typography variant="h3" style={{ textAlign: 'center', margin: `${theme.spacing.md} 0px`, color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif' }}>
                         Gallery
                     </Typography>
                     <Box sx={styles.carouselContainer}>
@@ -299,19 +275,21 @@ function ArcanistBallroom() {
                         <Box sx={styles.carouselContent}>
                         {
                             features.map((item, index) => (
-                                <Slide 
+                                <Box
                                     key={index}
-                                    direction={direction} 
-                                    in={carouselIndex === index} 
-                                    mountOnEnter 
-                                    unmountOnExit
-                                    timeout={{ enter: 300, exit: 300 }}
-                                    style={{ position: 'absolute', width: '100%', height: '100%' }}
+                                    sx={{
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: '100%',
+                                        opacity: carouselIndex === index ? 1 : 0,
+                                        transition: 'opacity 0.5s ease-in-out',
+                                        zIndex: carouselIndex === index ? 2 : 1,
+                                        display: 'flex',
+                                        justifyContent: 'center'
+                                    }}
                                 >
-                                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100%', transition: 'opacity 0.6s ease-in-out' }}>
-                                        <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px', transition: 'opacity 0.6s ease-in-out' }} loading='lazy' />
-                                    </div>
-                                </Slide>
+                                    <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }} loading='lazy' />
+                                </Box>
                             ))
                         }
                         </Box>

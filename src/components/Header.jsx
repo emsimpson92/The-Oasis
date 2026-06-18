@@ -12,11 +12,18 @@ const Styles = (theme, transparent) => {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            position: 'sticky',
+            position: 'fixed',
             top: 0,
-            zIndex: 100,
-            [theme.breakpoints.down('sm')]: {
-                padding: theme.spacing.sm,
+            left: 0,
+            right: 0,
+            width: '100%',
+            boxSizing: 'border-box',
+            zIndex: 1200,
+                [theme.breakpoints.down('sm')]: {
+                    position: 'relative',
+                    zIndex: 1200,
+                    width: 'auto',
+                    padding: theme.spacing.sm,
             },
         },
         oasisLogo: {

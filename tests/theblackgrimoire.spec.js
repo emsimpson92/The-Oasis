@@ -16,10 +16,14 @@ test.describe('The Black Grimoire page', () => {
   test('shows carousel and can navigate pages', async ({ page }) => {
     await page.goto('/chronicles/theblackgrimoire');
     const nextButton = page.getByRole('button', { name: /next/i });
+    const previousButton = page.getByRole('button', { name: /previous/i });
     const pageLabel = page.locator('text=Page 1').first();
 
     await expect(pageLabel).toBeVisible();
     await nextButton.click();
     await expect(page.locator('text=Page 2')).toBeVisible();
+
+    await previousButton.click();
+    await expect(page.locator('text=Page 1')).toBeVisible();
   });
 });

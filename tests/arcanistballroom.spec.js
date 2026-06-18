@@ -19,16 +19,29 @@ test('about button scrolls to about section', async ({ page }) => {
   await expect(aboutHeader).toBeVisible();
 });
 
+const getVisibleCarouselImageSrc = async (page) => {
+  return page.evaluate(() => {
+    const headings = Array.from(document.querySelectorAll('h3'));
+    const galleryHeading = headings.find((heading) => heading.textContent?.trim() === 'Gallery');
+    if (!galleryHeading) return '';
+    const carousel = galleryHeading.nextElementSibling;
+    if (!carousel) return '';
+    const images = Array.from(carousel.querySelectorAll('img[alt]'));
+    const visible = images.find((img) => img.parentElement && window.getComputedStyle(img.parentElement).opacity === '1');
+    return visible?.src || '';
+  });
+};
+
 test('carousel next button changes slide', async ({ page }) => {
   await page.goto('/arcanistballroom');
   await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
   await page.waitForTimeout(500);
-  const initialImageName = await page.locator('text=/^(Ballroom|Bar Entry|Bar Left|Bar Right|Exterior Entry|Exterior Front|Exterior Profile|Gallery Walkway|Game Room|Grand Stair|Library|Library Corner|Story Circle and Flower Garden|Theater Audience|Theater Stage)/').first().textContent();
+  const initialImageSrc = await getVisibleCarouselImageSrc(page);
   const nextButton = page.locator('button[aria-label="next"]');
   await nextButton.click();
   await page.waitForTimeout(500);
-  const newImageName = await page.locator('text=/^(Ballroom|Bar Entry|Bar Left|Bar Right|Exterior Entry|Exterior Front|Exterior Profile|Gallery Walkway|Game Room|Grand Stair|Library|Library Corner|Story Circle and Flower Garden|Theater Audience|Theater Stage)/').first().textContent();
-  expect(newImageName).not.toBe(initialImageName);
+  const newImageSrc = await getVisibleCarouselImageSrc(page);
+  expect(newImageSrc).not.toBe(initialImageSrc);
 });
 
 test('carousel previous button changes slide', async ({ page }) => {
@@ -40,10 +53,10 @@ test('carousel previous button changes slide', async ({ page }) => {
   await page.waitForTimeout(300);
   await nextButton.click();
   await page.waitForTimeout(300);
-  const currentImageName = await page.locator('text=/^(Ballroom|Bar Entry|Bar Left|Bar Right|Exterior Entry|Exterior Front|Exterior Profile|Gallery Walkway|Game Room|Grand Stair|Library|Library Corner|Story Circle and Flower Garden|Theater Audience|Theater Stage)/').first().textContent();
+  const currentImageSrc = await getVisibleCarouselImageSrc(page);
   const prevButton = page.locator('button[aria-label="previous"]');
   await prevButton.click();
   await page.waitForTimeout(500);
-  const newImageName = await page.locator('text=/^(Ballroom|Bar Entry|Bar Left|Bar Right|Exterior Entry|Exterior Front|Exterior Profile|Gallery Walkway|Game Room|Grand Stair|Library|Library Corner|Story Circle and Flower Garden|Theater Audience|Theater Stage)/').first().textContent();
-  expect(newImageName).not.toBe(currentImageName);
+  const newImageSrc = await getVisibleCarouselImageSrc(page);
+  expect(newImageSrc).not.toBe(currentImageSrc);
 });

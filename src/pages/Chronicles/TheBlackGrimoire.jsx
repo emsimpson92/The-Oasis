@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Container, Typography, IconButton, Slide } from '@mui/material';
+import { Box, Container, Typography, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import useMeta from '../../hooks/useMeta';
@@ -7,13 +7,13 @@ import { useTheme as useCustomTheme } from '../../hooks/useTheme';
 import { useTheme as muiTheme } from '@mui/material';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import BlackGrimoireImg from '../../assets/Chronicles/BlackGrimoire.webp';
-import Page1 from '../../assets/Chronicles/Page1.webp';
-import Page2 from '../../assets/Chronicles/Page2.webp';
-import Page3 from '../../assets/Chronicles/Page3.webp';
-import Page4 from '../../assets/Chronicles/Page4.webp';
-import Page5 from '../../assets/Chronicles/Page5.webp';
-import Page6 from '../../assets/Chronicles/Page6.webp';
+import BlackGrimoireImg from '../../assets/Chronicles/BlackGrimoire/BlackGrimoire.webp';
+import Page1 from '../../assets/Chronicles/BlackGrimoire/Page1.webp';
+import Page2 from '../../assets/Chronicles/BlackGrimoire/Page2.webp';
+import Page3 from '../../assets/Chronicles/BlackGrimoire/Page3.webp';
+import Page4 from '../../assets/Chronicles/BlackGrimoire/Page4.webp';
+import Page5 from '../../assets/Chronicles/BlackGrimoire/Page5.webp';
+import Page6 from '../../assets/Chronicles/BlackGrimoire/Page6.webp';
 import '../../styles/fonts.css';
 
 const Styles = (theme) => ({
@@ -28,7 +28,8 @@ const Styles = (theme) => ({
 		overflow: 'hidden',
 		backgroundColor: theme.colors.background,
 		[theme.breakpoints.down('sm')]: {
-			height: '31vh'
+			height: '31vh',
+			maxHeight: '250px'
 		}
 	},
 	heroImage: {
@@ -39,7 +40,7 @@ const Styles = (theme) => ({
 		width: '100%',
 		height: '100%',
 		objectFit: 'contain',
-		objectPosition: 'top center',
+		objectPosition: 'center',
 		filter: 'brightness(0.75) contrast(1.05)',
 		[theme.breakpoints.down('sm')]: {
 			left: 0,
@@ -48,12 +49,19 @@ const Styles = (theme) => ({
 		}
 	},
 	heroTitle: {
-		position: 'relative',
+		position: 'absolute',
+		bottom: theme.spacing.md,
+		left: '50%',
+		transform: 'translateX(-50%)',
 		zIndex: 2,
 		color: theme.colors.background,
 		fontFamily: 'Arsenica Trial Regular, serif',
-		padding: `${theme.spacing.lg} ${theme.spacing.md}`,
-		textAlign: 'center'
+		textAlign: 'center',
+		width: '100%',
+		padding: `${theme.spacing.sm} ${theme.spacing.md}`,
+		[theme.breakpoints.down('sm')]: {
+			bottom: theme.spacing.sm
+		}
 	},
 	article: {
 		padding: `${theme.spacing.xl} ${theme.spacing.md} ${theme.spacing.sm}`,
@@ -101,7 +109,6 @@ function TheBlackGrimoire() {
 	const mui = muiTheme();
 	const styles = Styles({ ...mui, ...theme });
 	const [carouselIndex, setCarouselIndex] = useState(0);
-	const [direction, setDirection] = useState('left');
 
 	const pages = [
 		{ name: 'Page 1', image: Page1 },
@@ -113,12 +120,10 @@ function TheBlackGrimoire() {
 	];
 
 	const handlePrevious = () => {
-		setDirection('right');
 		setCarouselIndex((prev) => (prev === 0 ? pages.length - 1 : prev - 1));
 	};
 
 	const handleNext = () => {
-		setDirection('left');
 		setCarouselIndex((prev) => (prev === pages.length - 1 ? 0 : prev + 1));
 	};
 
@@ -144,7 +149,7 @@ function TheBlackGrimoire() {
 				loading="eager"
 				sx={styles.heroImage}
 			/>
-				<Typography variant="h1" component="h1" style={{ ...styles.heroTitle, fontSize: '3rem' }}>
+				<Typography variant="h1" component="h1" style={{ ...styles.heroTitle, fontSize: '2.5rem' }}>
 					The Black Grimoire
 				</Typography>
 			</Box>
@@ -216,19 +221,22 @@ function TheBlackGrimoire() {
 						<Box sx={styles.carouselContent}>
 							{
 								pages.map((item, index) => (
-									<Slide 
+									<Box 
 										key={index}
-										direction={direction} 
-										in={carouselIndex === index} 
-										mountOnEnter 
-										unmountOnExit
-										timeout={{ enter: 300, exit: 300 }}
-										style={{ position: 'absolute', width: '100%', height: '100%' }}
-									>
-										<div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100%', transition: 'opacity 0.6s ease-in-out' }}>
-											<img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', borderRadius: '4px', transition: 'opacity 0.6s ease-in-out' }} loading='lazy' />
+										sx={{
+											position: 'absolute',
+											width: '100%',
+											height: '100%',
+											opacity: carouselIndex === index ? 1 : 0,
+											transition: 'opacity 0.5s ease-in-out',
+											zIndex: carouselIndex === index ? 2 : 1,
+											display: 'flex',
+											justifyContent: 'center'
+										}}>
+										<div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100%' }}>
+											<img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', borderRadius: '4px' }} loading='lazy' />
 										</div>
-									</Slide>
+									</Box>
 								))
 							}
 						</Box>
