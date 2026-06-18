@@ -31,32 +31,3 @@ const getVisibleCarouselImageSrc = async (page) => {
     return visible?.src || '';
   });
 };
-
-test('carousel next button changes slide', async ({ page }) => {
-  await page.goto('/arcanistballroom');
-  await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(500);
-  const initialImageSrc = await getVisibleCarouselImageSrc(page);
-  const nextButton = page.locator('button[aria-label="next"]');
-  await nextButton.click();
-  await page.waitForTimeout(500);
-  const newImageSrc = await getVisibleCarouselImageSrc(page);
-  expect(newImageSrc).not.toBe(initialImageSrc);
-});
-
-test('carousel previous button changes slide', async ({ page }) => {
-  await page.goto('/arcanistballroom');
-  await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(500);
-  const nextButton = page.locator('button[aria-label="next"]');
-  await nextButton.click();
-  await page.waitForTimeout(300);
-  await nextButton.click();
-  await page.waitForTimeout(300);
-  const currentImageSrc = await getVisibleCarouselImageSrc(page);
-  const prevButton = page.locator('button[aria-label="previous"]');
-  await prevButton.click();
-  await page.waitForTimeout(500);
-  const newImageSrc = await getVisibleCarouselImageSrc(page);
-  expect(newImageSrc).not.toBe(currentImageSrc);
-});

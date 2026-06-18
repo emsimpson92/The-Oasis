@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import useMeta from '../hooks/useMeta';
-import { Box, Button, Container, IconButton, Typography } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Box, Button, Container, Typography } from '@mui/material';
 import { useTheme } from '../hooks/useTheme';
 import '../styles/fonts.css';
 import { useTheme as muiTheme } from '@mui/material';
@@ -142,7 +140,7 @@ const Styles = (theme) => ({
             justifyContent: 'center', 
             height: '375px',
             [theme.breakpoints.down('sm')]: {
-                height: `160px`,
+                height: `200px`,
                 minWidth: '250px'
             },
         }
@@ -173,14 +171,6 @@ function ArcanistBallroom() {
         { name: 'Theater Stage', image: TheaterStage },
     ];
     
-    const handlePrevious = () => {
-        setCarouselIndex((prev) => (prev === 0 ? features.length - 1 : prev - 1));
-    };
-    
-    const handleNext = () => {
-        setCarouselIndex((prev) => (prev === features.length - 1 ? 0 : prev + 1));
-    };
-    
     const handleExplore = (event) => {
         aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
         event.target.blur();
@@ -189,6 +179,13 @@ function ArcanistBallroom() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCarouselIndex((prev) => (prev === features.length - 1 ? 0 : prev + 1));
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [features.length]);
 
 
 
@@ -269,9 +266,6 @@ function ArcanistBallroom() {
                         Gallery
                     </Typography>
                     <Box sx={styles.carouselContainer}>
-                        <IconButton onClick={handlePrevious} sx={styles.carouselButton} aria-label="previous" size="large">
-                            <ArrowBackIcon />
-                        </IconButton>
                         <Box sx={styles.carouselContent}>
                         {
                             features.map((item, index) => (
@@ -293,9 +287,6 @@ function ArcanistBallroom() {
                             ))
                         }
                         </Box>
-                        <IconButton onClick={handleNext} sx={styles.carouselButton} aria-label="next" size="large">
-                            <ArrowForwardIcon />
-                        </IconButton>
                     </Box>
                     <Typography variant="body1" style={{ textAlign: 'center', color: theme.colors.primary, fontFamily: 'Cormorant Garamond, serif', fontSize: theme.typography.fontSize.large, marginTop: theme.spacing.sm }}>
                         {features[carouselIndex].name}

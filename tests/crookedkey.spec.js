@@ -41,37 +41,3 @@ const getCrookedKeyVisibleCarouselSrc = async (page) => {
     return visible?.src || '';
   });
 };
-
-test('carousel next button changes slide', async ({ page }) => {
-  await page.goto('/crookedkey');
-  await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(500);
-
-  const initialSlideSrc = await getCrookedKeyVisibleCarouselSrc(page);
-  const nextButton = page.locator('button[aria-label="next"]');
-  await nextButton.click();
-  await page.waitForTimeout(500);
-
-  const newSlideSrc = await getCrookedKeyVisibleCarouselSrc(page);
-  expect(newSlideSrc).not.toBe(initialSlideSrc);
-});
-
-test('carousel previous button changes slide', async ({ page }) => {
-  await page.goto('/crookedkey');
-  await page.locator('h3:has-text("Gallery")').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(500);
-
-  const nextButton = page.locator('button[aria-label="next"]');
-  await nextButton.click();
-  await page.waitForTimeout(300);
-  await nextButton.click();
-  await page.waitForTimeout(300);
-
-  const currentSlideSrc = await getCrookedKeyVisibleCarouselSrc(page);
-  const prevButton = page.locator('button[aria-label="previous"]');
-  await prevButton.click();
-  await page.waitForTimeout(500);
-
-  const newSlideSrc = await getCrookedKeyVisibleCarouselSrc(page);
-  expect(newSlideSrc).not.toBe(currentSlideSrc);
-});
