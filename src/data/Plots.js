@@ -10,7 +10,7 @@ export const Plots = [
         },
         {
             id: 2,
-            description: 'Myshkiin\'s Home'
+            description: 'Available'
         },
         {
             id: 3,
@@ -18,11 +18,11 @@ export const Plots = [
         },
         {
             id: 4,
-            description: 'Timochka\'s Home'
+            description: 'Available'
         },
         {
             id: 5,
-            description: 'Bunny\'s Home'
+            description: 'Turu\'s Home'
         },
         {
             id: 6,
@@ -30,7 +30,7 @@ export const Plots = [
         },
         {
             id: 7,
-            description: 'Mellidel\'s Home'
+            description: 'Available'
         },
         {
             id: 8,
@@ -48,7 +48,7 @@ export const Plots = [
         },
         {
             id: 11,
-            description: 'Available'
+            description: 'Calendris\' Home'
         },
         {
             id: 12,
@@ -86,11 +86,11 @@ export const Plots = [
     [
         {
             id: 20,
-            description: 'Savadra\'s Home'
+            description: 'Avenoir\'s Home'
         },
         {
             id: 21,
-            description: 'Dynastus Hall'
+            description: 'Myshkiin\'s Home'
         },
         {
             id: 22,
@@ -106,7 +106,7 @@ export const Plots = [
         },
         {
             id: 25,
-            description: 'Bjurky\'s Home'
+            description: 'Available'
         },
         {
             id: 26,
@@ -114,7 +114,7 @@ export const Plots = [
         },
         {
             id: 27,
-            description: 'Skelly\'s Home'
+            description: 'Available'
         },
         {
             id: 28,
@@ -136,11 +136,11 @@ export const Plots = [
         },
         {
             id: 32,
-            description: 'The Slurring Murloc'
+            description: 'Available'
         },
         {
             id: 33,
-            description: 'Available'
+            description: 'Yvelyth\'s Home'
         },
         {
             id: 34,
@@ -164,13 +164,13 @@ export const Plots = [
         },
         {
             id: 39,
-            description: 'Artivee\'s Home'
+            description: 'Moontree Distillery'
         }
     ],
     [
         {
             id: 40,
-            description: 'Elethyr\'s Home'
+            description: 'Available'
         },
         {
             id: 41,
@@ -194,11 +194,11 @@ export const Plots = [
         },
         {
             id: 46,
-            description: 'The Arcanist\'s Ballroom'
+            description: 'Available'
         },
         {
             id: 47,
-            description: 'Zamorak\'s Home'
+            description: 'Available'
         },
         {
             id: 48,
@@ -206,7 +206,7 @@ export const Plots = [
         },
         {
             id: 49,
-            description: 'Sunlight\'s Serenity Clinic'
+            description: 'Available'
         }
     ],
     [
@@ -216,7 +216,7 @@ export const Plots = [
         },
         {
             id: 51,
-            description: 'Venarra\'s Home'
+            description: 'Available'
         },
         {
             id: 52,
